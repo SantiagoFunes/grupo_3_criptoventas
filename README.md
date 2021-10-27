@@ -5,10 +5,10 @@ Los integrantes del grupo son:
 - Santiago
 - Esteban
 Las 5 Paginas web de e-comerce que usaremos como referencia son:
--https://www.apple.com/
--https://smokehaus.com.au/
--https://getneuro.com/
--https://www.skullcandy.com/
--https://www.getwelly.com/
+- https://www.apple.com/
+- https://smokehaus.com.au/
+- https://getneuro.com/
+- https://www.skullcandy.com/
+- https://www.getwelly.com/
 
 
