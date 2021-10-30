@@ -2,7 +2,7 @@ En esta pagina se venden placas de video, rigs de mineria y se comercializa cryp
 Los integrantes del grupo son:
 - Miguel:
 - Lucas:
-- Santiago:
+- Santiago: Tengo 24 años, soy estudiante de Ingeniería Eléctrica en la Universidad Nacional de Rosario, y actualmente trabajo en una empresa dedicada a la venta y asesoramiento de productos eléctricos.
 - Esteban: Tengo 27 años, actualmente estudio lic. en sistemas en la facultad de informatica de la UNLP, y trabajo en una clinica como facturista.
 # Las 5 Paginas web de e-comerce que usaremos como referencia son:
 - https://www.apple.com/
