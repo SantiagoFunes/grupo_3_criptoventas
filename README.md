@@ -13,5 +13,7 @@ Los integrantes del grupo son:
 # Wireframe del proyecto
 - https://wireframe.cc/pro/pp/ebf02f91d486863
 
+# Espacio de trabajo en Trello 
+- https://trello.com/b/xwV3p3kv/criptoventas
 
 
