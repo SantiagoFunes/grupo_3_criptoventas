@@ -1,6 +1,6 @@
 En esta pagina se venden placas de video, rigs de mineria y se comercializa crypto, se apunta a cualquier persona interesada en incursionar en cryptomineria, inversionistas, o gente con ganas de gastar 500.000 pesos en una tarde.
 Los integrantes del grupo son:
-- Miguel:
+- Miguel:Tengo 25 años, soy de Avellaneda y estoy estudiando arquitectura pero siempre me interese por la programación desde un lado mas autodidacta.
 - Lucas:Soy estudiante de Psicologia, tengo 27 años, vivo en La Plata, y esta es mi primera vez incursionando en el mundo de la programacion.
 - Santiago: Tengo 24 años, soy estudiante de Ingeniería Eléctrica en la Universidad Nacional de Rosario, y actualmente trabajo en una empresa dedicada a la venta y asesoramiento de productos eléctricos.
 - Esteban: Tengo 27 años, actualmente estudio lic. en sistemas en la facultad de informatica de la UNLP, y trabajo en una clinica como facturista.
