@@ -1,0 +1,31 @@
+*{
+    margin: 0px;
+    padding: 0px;    
+    box-sizing: border-box;
+}
+body{
+   background-color:gold;
+   text-align:center;
+}
+a{
+  text-decoration:none;
+  color:black;
+}
+.barra{
+  display: inline-block;
+}
+footer .barra{
+  display: flex;
+  justify-content:flex-end;
+  
+    
+}
+#cr{
+  display:flex;
+  flex-direction:column-reverse;
+  text-align: left;  
+}
+footer .barra #cr{
+  font-family: 'Rubik', sans-serif;
+  font-size: 0.8rem;
+}
