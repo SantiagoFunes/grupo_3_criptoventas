@@ -1,24 +1,26 @@
-const express = require('express');
-const app = express();
-app.use(express.static('public'));
+const express = require("express")
+const app = express()
+const path = require("path");
+const exp = require("constants");
+app.use(express.urlencoded({extended: true}))
 
 
-app.get('/', (req,res)=>{
-    res.sendFile(__dirname + '/views/home.html');
-});
+const publicpath = path.resolve(__dirname,'./public');
+app.use(express.static(publicpath))
 
-app.get('/login', (req,res)=>{
-    res.sendFile(__dirname + '/views/login.html');
-});
 
-app.get('/register', (req,res)=>{
-    res.sendFile(__dirname + '/views/register.html');
-});
+app.get("/",(req,res) => {
+    res.sendFile(path.resolve(__dirname, './views/home.html'))
+})
 
-app.post('/login', (req,res)=>{
-    res.sendFile(__dirname + '/views/home.html');
-});
+app.get("/register",(req,res) => {
+    res.sendFile(path.resolve(__dirname, './views/register.html'))
+})
 
-app.listen(3000, ()=>{
-    console.log('Servidor funcionando');
-});
+app.get("/login",(req,res) => {
+    res.sendFile(path.resolve(__dirname, './views/login.html'))
+})
+
+app.listen(process.env.PORT || 3000, ()=> {
+    console.log("Servidor funcionando");
+})
