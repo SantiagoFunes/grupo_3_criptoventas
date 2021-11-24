@@ -1,0 +1,12 @@
+div button{
+    width: 300px;
+  background-color: rgb(190, 145, 145);
+  transition: ease-out 0.3s;
+  box-shadow: inset 0 0 0 0 #063ff9;
+}
+div button:hover{
+    background-color: #0022AA;
+box-shadow: inset 300px 0 0 0 #066ff9;
+}
+body{
+    background-color: rgb(186, 230, 243);
