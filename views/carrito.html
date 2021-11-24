@@ -4,18 +4,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Carrito</title>
+    <link href="/css/Carrito.css" rel="stylesheet">
 </head>
 <body>
+    <h3>TU PEDIDO</h3>
     <section>
-        <articles class="articulos">
-          <img src="/images/rig.jpg">
-          
+        <articles class="topaid">
+          <img src="/images/rig.jpg"class="Carrito">
+          <hr>
+          <div class="contenedor">
+              Subtotal: $0,00
+                <div class="costo-envio">
+                    <label>Ciudad:</label>
+                    <select name="ciudad" class="control">
+                        <option value="baires">Buenos Aires</option>
+                        <option value="ros">Rosario</option>
+                        <option value="mdz">Mendoza</option>
+                    </select>
+                </div>
+              <p>Envio: $0,00</p>
+              <p>Total: $0,00</p>
+
+                <div class="boton-comprar">
+                    <button type="reset" class="estilo-boton-seguir">Seguir comprando</button>
+                    <button type="submit" class="estilo-boton-comprar">Comprar! </button>
+                    
+                </div>
+          </div>
         </articles>
       </section>
-<br>
-      <section>
-        <button class="boton-compra">Comprar!</button>
-      </section>
+
+    
+
+    
+        
+    
+  
 </body>
 </html>

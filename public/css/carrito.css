@@ -1,0 +1,32 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.boton-comprar{
+    display:flex;
+    align-content: flex-end;   
+    flex-wrap: wrap;
+    text-align: left;
+    
+  }
+.estilo-boton-comprar{
+  background-color:green;
+  border-radius: 5px;
+  margin: 15px 
+}
+
+.estilo-boton-seguir{
+    background-color:crimson;
+  border-radius: 5px;
+  margin: 15px 
+}
+.contenedor{
+    display: flex;
+    flex-direction: column;
+    align-content: flex-end;   
+    flex-wrap: wrap;
+    text-align: left;
+}
