@@ -122,6 +122,10 @@ section {
 	vertical-align: middle;
 	margin:0;
 }
+header a{
+	text-decoration: none;
+	color: grey;
+}
 
 .footer-distributed .footer-center p span{
 	display:block;
@@ -169,6 +173,7 @@ section {
 	font-weight: bold;
 	margin-bottom: 20px;
 }
+
 
 @media (max-width: 880px) {
 
