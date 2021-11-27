@@ -32,3 +32,13 @@ app.get("/detalle",(req,res) => {
 app.listen(process.env.PORT || 3000, ()=> {
     console.log("Servidor funcionando");
 })
+// ---termina la zona de puertos, comienza funcionalidad---
+// addEventListener('DOMContentLoaded', ()=>{
+//     const btn_menu=document.querySelector('btn-menu')
+//     if (btn_menu){
+//         btn_menu.addEventListener('click',()=>{
+//             const menu_items=document.querySelector('header-items a')
+//             menu_items.classList.toggle('show')
+//         })
+//     }
+// })
