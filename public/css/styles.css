@@ -244,6 +244,11 @@ header a{
 .header-table a{
 	padding: 10px;
 	color: white;
+	display: flex;
+	justify-content: flex-end;
+}
+.form{
+	margin-right: 10px;
 }
 .logo{
 	padding: 10px;
@@ -273,7 +278,10 @@ hr{
 .products{
 	display:flex;
 }
-.btn-menu{
+.nav_input{
+	display: none; 
+}
+.nav_label{
 	display: none;
 	margin-right:30px;
 	font-size: 25px;
@@ -281,27 +289,51 @@ hr{
 	cursor: pointer;
 }
 
+
 /* @media screen and (max-width:952px) {
 	.header-items li a{
 		font-size: 16px;
 	}
 } */
 @media screen and (max-width:718px){
+	.nav_input:checked + .header-items{
+		display:inline-block;
+   }
 	.menu{
 		height: 65px;
+		padding-left: 20px;
+		position: fixed;
 	}
-	.btn-menu{
+	.nav_label{
 		display: inline-flex;
 	}
-	.header-items li a{
-		position:fixed;
+	/* .header-a{
+		 position:fixed;
 		width: 100vw;
 		height: calc(100% - 65px);
 		background: black;
-		top:-100vh;
+		top:-100vh; 
+		display: none;
 		text-align: center;
 		transition:all 0.5s;
-		flex-direction: column;
+		flex-direction: column; 
 		
+	} */
+	.header-items{
+		display: none;
+	}
+	.header-items{
+		background:black;
+		position: fixed;
+		display: flex;
+		flex-direction: column;
+		top:80px;
+		/* bottom: 0;   */
+		clip-path: inset(0 100% 100% 0);
+		transition: clip-path 400ms ease-in;
+		transition-duration: 150ms;
+	}
+	.nav_input:checked + .header-items{
+		clip-path: inset(0 100% 0 100%);
 	}
 }
