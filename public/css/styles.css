@@ -337,3 +337,9 @@ hr{
 		clip-path: inset(0 100% 0 100%);
 	}
 }
+.log a{
+	text-decoration: none;
+	color: white;
+}
+
+/* estilos de carrito */
