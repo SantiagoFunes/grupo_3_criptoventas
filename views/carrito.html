@@ -5,15 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrito</title>
-    <link href="/css/carrito.css" rel="stylesheet">
+    <link href="/css/styles.css" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="/images/faviconn.ico">
 </head>
 <body>
-    <header>    
-        <div class="top-header">
-        <div class="logo"> 
-            <a href="/"><img style="max-width: 250px; max-height:250px" id="logo" src="\images\Cryptoventas-logo.png" alt="Binance-Logo"></a>
-        </div>
+    <nav class="menu">
+        <label for="menu" class="nav_label">
+            <i id="hamburguer" class="fas fa-bars"></i>
+         </label>
+         <label class="log"><img src="\images\Logotipo.png" width="45px" height="45px" alt="Logo" class="logo"><span>Criptoventas</span><p style="font-size: 7px; font-style: italic; padding-left: 47px;">Let´s mine</p></label>
+         <input type="checkbox" id="menu" class="nav_input">
+         <ul class="header-items">
+            <li class="header-a"><a href="/">Inicio</a></li>
+            <li class="header-a"><a href="/login">Log in <i class="far fa-user"></i></a></li>
+            <li class="header-a"><a href="/register">Registrate <i class="fas fa-sign-in-alt"></i></a></li>
+            <li class="header-a"><a href="">Favoritos <i class="far fa-star"></i></a></li>
+            <li class="header-a"><a href="/carrito">Tu carrito <i class="fas fa-shopping-cart"></i> </a></li>
+         </ul>
+         <div class="form"><input type="search" name="Buscar" id="buscador"> <i class="fas fa-search"></i></div>
+     </nav>
+
+    <header>
+        <hr style="color: white; height: 0.5px;">
     </header>
     <h3>TU PEDIDO</h3>
     <section class="carrito">
@@ -44,10 +57,10 @@
       </div>
 
       <footer class="footer-distributed">
-    
+
         <div class="footer-left">
 
-            <h3>Cripto<span>ventas</span></h3>
+            <a class="cv" href="/"><img src="\images\Logotipo.png" width="45px" height="45px" alt="Logo" class="logo">Criptoventas</a>
 
             <p class="footer-links">
                 <a href="#" class="link-1">Home</a>
@@ -79,7 +92,7 @@
             </div>
 
             <div>
-              
+                
                 <p><a href="mailto:support@company.com">criptoventas@binance.com</a></p>
             </div>
 

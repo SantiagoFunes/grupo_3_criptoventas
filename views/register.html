@@ -6,20 +6,28 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-        <link rel="stylesheet" href="css/formulario.css">
+        <link rel="stylesheet" href="css/styles.css">
         <link rel="icon" type="image/x-icon" href="/images/faviconn.ico">
     </head>
     <body>
+        <nav class="menu">
+            <label for="menu" class="nav_label">
+                <i id="hamburguer" class="fas fa-bars"></i>
+             </label>
+             <label class="log"><img src="\images\Logotipo.png" width="45px" height="45px" alt="Logo" class="logo"><span>Criptoventas</span><p style="font-size: 7px; font-style: italic; padding-left: 47px;">Let´s mine</p></label>
+             <input type="checkbox" id="menu" class="nav_input">
+             <ul class="header-items">
+                <li class="header-a"><a href="/">Inicio</a></li>
+                <li class="header-a"><a href="/login">Log in <i class="far fa-user"></i></a></li>
+                <li class="header-a"><a href="/register">Registrate <i class="fas fa-sign-in-alt"></i></a></li>
+                <li class="header-a"><a href="">Favoritos <i class="far fa-star"></i></a></li>
+                <li class="header-a"><a href="/carrito">Tu carrito <i class="fas fa-shopping-cart"></i> </a></li>
+             </ul>
+             <div class="form"><input type="search" name="Buscar" id="buscador"> <i class="fas fa-search"></i></div>
+         </nav>
+    
         <header>
-            <div class="top-header">
-                <div class="logo"> 
-                    <a href="/"><img style="max-width: 250px; max-height:250px" id="logo"src="\images\Cryptoventas-logo.png" alt="Binance-Logo"></a>
-                </div>
-                    <li><a href="/login">Si ya tienes cuenta, ingresa  <i class="fas fa-sign-in-alt"></i></a></li>
-                </ul>
-            </nav>
-          <br>
-      
+            <hr style="color: white; height: 0.5px;">
         </header>
         <main class="register">
             <form action="/" method="POST">
@@ -47,10 +55,10 @@
         </main>
         <br>
         <footer class="footer-distributed">
-    
+
             <div class="footer-left">
     
-                <h3>Cripto<span>ventas</span></h3>
+                <a class="cv" href="/"><img src="\images\Logotipo.png" width="45px" height="45px" alt="Logo" class="logo">Criptoventas</a>
     
                 <p class="footer-links">
                     <a href="#" class="link-1">Home</a>
@@ -82,7 +90,7 @@
                 </div>
     
                 <div>
-                  
+                    
                     <p><a href="mailto:support@company.com">criptoventas@binance.com</a></p>
                 </div>
     
