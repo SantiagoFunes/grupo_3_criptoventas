@@ -5,42 +5,95 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrito</title>
-    <link href="/css/Carrito.css" rel="stylesheet">
+    <link href="/css/carrito.css" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="/images/faviconn.ico">
 </head>
 <body>
-    <div class="top-header">
-    <div class="logo"> 
-        <a href="/"><img style="max-width: 250px; max-height:250px" id="logo" src="\images\Cryptoventas-logo.png" alt="Binance-Logo"></a>
-    </div>
+    <header>    
+        <div class="top-header">
+        <div class="logo"> 
+            <a href="/"><img style="max-width: 250px; max-height:250px" id="logo" src="\images\Cryptoventas-logo.png" alt="Binance-Logo"></a>
+        </div>
+    </header>
     <h3>TU PEDIDO</h3>
-    <section>
+    <section class="carrito">
         <articles class="topaid">
-          <img width="100%" src="/images/rig.jpg"class="Carrito">
+          <img width="50%" src="/images/rig.jpg"class="Carrito">
           <hr>
-          <div class="contenedor">
-              Subtotal: $0,00
-                <div class="costo-envio">
-                    <label>Ciudad:</label>
-                    <select name="ciudad" class="control">
-                        <option value="baires">Buenos Aires</option>
-                        <option value="ros">Rosario</option>
-                        <option value="mdz">Mendoza</option>
-                    </select>
-                </div>
-              <p>Envio: $0,00</p>
-              <p>Total: $0,00</p>
-
-                <div class="boton-comprar">
-                    
-                    <button class="estilo-boton-seguir"><a href="/" type="reset" > Seguir comprando</button>
-                    <button class="estilo-boton-comprar"><a href= "/pagar" type="submit"> Comprar! </button>
-                    
-                </div>
-          </div>
         </articles>
-      </section>
+    </section>
+    <div class="contenedor">
+        Subtotal: $0,00
+          <div class="costo-envio">
+              <label>Ciudad:</label>
+              <select name="ciudad" class="control">
+                  <option value="baires">Buenos Aires</option>
+                  <option value="ros">Rosario</option>
+                  <option value="mdz">Mendoza</option>
+              </select>
+          </div>
+        <p>Envio: $0,00</p>
+        <p>Total: $0,00</p>
 
+          <div class="boton-comprar">
+              
+              <button class="estilo-boton-seguir"><a href="/" type="reset" > Seguir comprando</button>
+              <button class="estilo-boton-comprar"><a href= "/pagar" type="submit"> Comprar! </button>
+              
+          </div>
+      </div>
+
+      <footer class="footer-distributed">
+    
+        <div class="footer-left">
+
+            <h3>Cripto<span>ventas</span></h3>
+
+            <p class="footer-links">
+                <a href="#" class="link-1">Home</a>
+                
+                <a href="#">Presupuestos</a>
+            
+                <a href="#">Terminos y condiciones</a>
+            
+                <a href="#">Nosotros</a>
+                
+                <a href="#">Ayuda</a>
+                
+                <a href="#">Contacto</a>
+            </p>
+
+            <p class="footer-company-name">Criptoventas © 2021</p>
+        </div>
+
+        <div class="footer-center">
+
+            <div>
+                
+                <p><span>Calle 62 nro 370</span> La Plata, Buenos Aires</p>
+            </div>
+
+            <div>
+                
+                <p>+54221-156020066</p>
+            </div>
+
+            <div>
+              
+                <p><a href="mailto:support@company.com">criptoventas@binance.com</a></p>
+            </div>
+
+        </div>
+
+        <div class="footer-right">
+
+            <p class="footer-company-about">
+                <span>Acerca de nosotros</span>
+                Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
+            </p>
+        </div>
+
+    </footer>
     
 
     
