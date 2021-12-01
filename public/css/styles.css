@@ -341,3 +341,19 @@ hr{
 	text-decoration: none;
 	color: white;
 }
+
+/* aqui empieza el estilos Detalles */
+
+.articuloDetalle{
+	background-color: black;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+.articuloDetalle span{
+	color: whitesmoke;
+	text-align: center;
+}
+.articuloDetalle img{
+	text-align: center;
+}
