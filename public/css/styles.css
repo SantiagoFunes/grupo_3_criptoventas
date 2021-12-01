@@ -6,6 +6,7 @@
 }
 body{
 	font-family:'Open Sans', Arial, Helvetica, sans-serif;
+	background-color: black;
 }
 .menu{
 	background-color: black;
@@ -92,17 +93,6 @@ footer{
     align-items: center;
     margin: auto;
     margin-top: 50px;
-}
-
-section {
-  width: 100%;
-  display: inline-block;
-  background: black;
-  height: 50vh;
-  text-align: center;
-  font-size: 22px;
-  font-weight: 700;
-  text-decoration: underline;
 }
 
 .footer-distributed{
@@ -356,4 +346,57 @@ hr{
 }
 .articuloDetalle img{
 	text-align: center;
+	box-shadow: 0px 0px 10px rgb(255, 4, 4);
+}
+.articuloDetalle img:hover{
+
+}.detalle-producto{
+	display: flex;
+	justify-content: center;
+	flex: wrap;
+	justify-content: space-around;
+
+}
+.contenedor-producto{
+	margin-top: 70px;
+	display: flex;
+	flex-wrap: wrap;
+	color:azure;
+	box-shadow: 0px 0px 10px rgb(82, 1, 1);
+	background-color: black;
+	width: 80%;
+	height:90%;
+	justify-content: center;
+	justify-content: space-between;
+	justify-content: space-around;
+	align-self: center;
+}
+.imagen-producto{
+	width: 50%;
+	height: 50%;
+	align-self: center;
+	background-color: rgb(26, 25, 25);
+}
+.titulo-producto{
+	width: 40%;
+	align-self: center;
+	flex-direction: column;
+	align-self: auto;
+	height: 20%;
+	order: 1;
+}
+.precio-producto{
+	width: 40%;
+	align-self: center;
+	flex-direction: column;
+	align-self:flex-end;
+	height: 20%;
+	order: 2;
+}
+.descripcion-producto{
+	width: 40%;
+	align-self: center;
+	text-align:center;
+	flex-direction: column;
+	order: 3;
 }
