@@ -348,7 +348,7 @@ hr{
 	padding-bottom: 2vw;
 	padding-left: 2vw;
 	padding-right: 2vw;
-	background-image: url(https://img.freepik.com/foto-gratis/pizarra-pizarra-fondo-oscuro-fondo-pantalla_28629-1125.jpg?size=626&ext=jpg);
+	background-image:url(/images/fondo-textura.jpg);
 	display: block;
 	
 }
@@ -362,7 +362,7 @@ hr{
 	padding-bottom: 2vw;
 	margin-left: 0vw;
 	
-	background-image: url(https://img.freepik.com/foto-gratis/pizarra-pizarra-fondo-oscuro-fondo-pantalla_28629-1125.jpg?size=626&ext=jpg);
+	background-image: url(/images/fondo-textura.jpg);
 	display: block;
 	
 }
