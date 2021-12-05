@@ -334,69 +334,85 @@ hr{
 
 /* aqui empieza el estilos Detalles */
 
-.articuloDetalle{
-	background-color: black;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-}
-.articuloDetalle span{
-	color: whitesmoke;
-	text-align: center;
-}
-.articuloDetalle img{
-	text-align: center;
-	box-shadow: 0px 0px 10px rgb(255, 4, 4);
-}
-.articuloDetalle img:hover{
 
-}.detalle-producto{
+.detalle-producto{
 	display: flex;
-	justify-content: center;
-	flex: wrap;
-	justify-content: space-around;
-
 }
+
 .contenedor-producto{
-	margin-top: 70px;
-	display: flex;
-	flex-wrap: wrap;
-	color:azure;
 	box-shadow: 0px 0px 10px rgb(82, 1, 1);
-	background-color: black;
-	width: 80%;
-	height:90%;
-	justify-content: center;
-	justify-content: space-between;
-	justify-content: space-around;
-	align-self: center;
+	background-color: rgb(24, 23, 23);
+	margin: 10vw;
+	border-radius: 2vw;
+	padding-top: 2vw;
+	padding-bottom: 2vw;
+	padding-left: 2vw;
+	padding-right: 2vw;
+	background-image: url(https://img.freepik.com/foto-gratis/pizarra-pizarra-fondo-oscuro-fondo-pantalla_28629-1125.jpg?size=626&ext=jpg);
+	display: block;
+	
 }
+.contenedor-producto1{
+	box-shadow: 0px 0px 10px rgb(82, 1, 1);
+	background-color: rgb(24, 23, 23);
+	margin: 3vw;
+	width: 100%;
+	border-radius: 2vw;
+	padding-top: 2vw;
+	padding-bottom: 2vw;
+	margin-left: 0vw;
+	
+	background-image: url(https://img.freepik.com/foto-gratis/pizarra-pizarra-fondo-oscuro-fondo-pantalla_28629-1125.jpg?size=626&ext=jpg);
+	display: block;
+	
+}
+.contenedor-producto:hover{
+	box-shadow: 0px 0px 10px rgb(202, 0, 0);
+	object-fit: cover;
+	}
+
 .imagen-producto{
-	width: 50%;
-	height: 50%;
-	align-self: center;
-	background-color: rgb(26, 25, 25);
+	justify-content: center;
+	height: auto; 
+	width: auto; 
+	max-width: 300px; 
+	max-height: 300px;
+	display: block; 
+	margin: auto;
+	box-shadow: 0px 0px 10px rgb(0, 0, 0);
 }
 .titulo-producto{
-	width: 40%;
-	align-self: center;
-	flex-direction: column;
-	align-self: auto;
-	height: 20%;
-	order: 1;
+	color: azure;
+	font-size: 4vw;
+	font-weight: bolder;
+	margin: auto;
+	text-align: center;
+	display: block;
 }
+
 .precio-producto{
-	width: 40%;
-	align-self: center;
-	flex-direction: column;
-	align-self:flex-end;
-	height: 20%;
-	order: 2;
+	color: azure;
+	font-size: 3vw;
+	font-weight: bold;
+	text-align: center;
+	padding-bottom: 2vw;
+	display: block;
 }
 .descripcion-producto{
-	width: 40%;
-	align-self: center;
-	text-align:center;
-	flex-direction: column;
-	order: 3;
+	color: azure;
+	justify-content: center;
+	text-align: center;
+	font-style: italic;
+	font-weight: bold;
+	display: block; 
+	margin: auto;
 }
+
+.slider-producto li img{
+	max-width: 400px;
+	max-height: 300px;
+	
+}
+
+
+
