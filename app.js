@@ -29,10 +29,12 @@ app.get("/detalle",(req,res) => {
     res.sendFile(path.resolve(__dirname, './views/detalle.html'))
 })
 
-app.listen(process.env.PORT || 3000, ()=> {
-    console.log("Servidor funcionando");
-})
+
 //  ---termina la zona de puertos, comienza funcionalidad---
 function showmenu() {
     document.getElementsByClassName("header-a").classList.toggle("show");
   }
+
+  app.listen(process.env.PORT || 3000, ()=> {
+    console.log("Servidor funcionando");
+})
