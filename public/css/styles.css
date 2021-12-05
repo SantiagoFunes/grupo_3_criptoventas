@@ -409,8 +409,8 @@ hr{
 }
 
 .slider-producto li img{
-	max-width: 400px;
-	max-height: 300px;
+	height: auto;
+max-width: 100%;
 	
 }
 
