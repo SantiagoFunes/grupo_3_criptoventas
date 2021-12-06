@@ -32,91 +32,141 @@
 
     <header>
         <hr style="color: white; height: 0.5px;">
+        <br>
+        <br>
+        <div class="slider">
+            <div class="slides">
+                <!-- Botones inicio -->
+                <input type="radio" name="radio-btn" id="radio1">
+                <input type="radio" name="radio-btn" id="radio2">
+                <input type="radio" name="radio-btn" id="radio3">
+                <input type="radio" name="radio-btn" id="radio4">
+                <!-- Botones fin -->
+                <!-- Slider imagenes inicio -->
+                <div class="slide first">
+                    <img src="\images\Slider\penrose.jpg" alt="Slider">
+                </div>
+                <div class="slide">
+                    <img src="\images\Slider\external-content.duckduckgo.com.jpg" alt="Slider">
+                </div>    
+                <div class="slide">
+                    <img src="\images\Slider\rig.png" alt="Slider">
+                </div>  
+                <div class="slide">
+                    <img src="\images\Slider\placa.png" alt="Slider">
+                </div>
+                <!-- Slider imagenes fin -->
+                <!-- Navegacion automatica inicio -->
+                <div class="navigation-auto">
+                    <div class="auto-btn1"></div>
+                    <div class="auto-btn2"></div>
+                    <div class="auto-btn3"></div>
+                    <div class="auto-btn4"></div>
+                </div>
+                <!-- Navegacion automatica fin -->
+            </div>
+                <!-- Navegacion manual inicio -->
+                <div class="navigation-manual">
+                    <label for="radio1" class="manual-btn"></label>
+                    <label for="radio2" class="manual-btn"></label>
+                    <label for="radio3" class="manual-btn"></label>
+                    <label for="radio4" class="manual-btn"></label>
+                </div>
+                <!-- Navegacion manual fin -->
+        </div>
+        <script type="text/javascript">
+            var counter=1;
+            setInterval(function(){
+                document.getElementById('radio' + counter).checked=true;
+                counter++
+                if(counter > 4){
+                    counter=1;
+                }
+            }, 5000);
+        </script>
     </header>
+    <br>
+    <br>
     <main>
-     <div class="productos">
-        <section>
-            <div class="products">
-                <article>
-                    <a href="/detalle"><img width="25%" src="/images/rig.png" alt="rig"></a>
-                    <div>
-                        <p class="precio">$100.000</p>
-                        <p class= "descuento">50% OFF</p>
-
-                    </div>
-                </article>
-            </div>  
+        <section class="homesection-producto">
+            <article class="homearticulo-producto">
+                <img class="home-producto" src="\images\Motherboard5.webp" alt="Producto">
+                <div class="home-descripcion">
+                    <p class="descripcion">Descripcion del producto</p>
+                    <p class="precio">$57.000</p>
+                    <p class="envio">Envio gratis</p>
+                </div>
+            </article>
+            <article class="homearticulo-producto">
+                <img class="home-producto" src="\images\Motherboard1.webp" alt="Producto">
+                <div class="home-descripcion">
+                    <p class="descripcion">Descripcion del producto</p>
+                    <p class="precio">$57.000</p>
+                    <p class="envio">Envio gratis</p>
+                </div>
+            </article>
+            <article class="homearticulo-producto">
+                <img class="home-producto" src="\images\Motherboard2.webp" alt="Producto">
+                <div class="home-descripcion">
+                    <p class="descripcion">Descripcion del producto</p>
+                    <p class="precio">$57.000</p>
+                    <p class="envio">Envio gratis</p>
+                </div>
+            </article>
+            <article class="homearticulo-producto">
+                <img class="home-producto" src="\images\Motherboard3.webp" alt="Producto">
+                <div class="home-descripcion">
+                    <p class="descripcion">Descripcion del producto</p>
+                    <p class="precio">$57.000</p>
+                    <p class="envio">Envio gratis</p>
+                </div>
+            </article>
+            <article class="homearticulo-producto">
+                <img class="home-producto" src="\images\Motherboard4.webp" alt="Producto">
+                <div class="home-descripcion">
+                    <p class="descripcion">Descripcion del producto</p>
+                    <p class="precio">$57.000</p>
+                    <p class="envio">Envio gratis</p>
+                </div>
+            </article>
+            <article class="homearticulo-producto">
+                <img class="home-producto" src="\images\Rig1.webp" alt="Producto">
+                <div class="home-descripcion">
+                    <p class="descripcion">Descripcion del producto</p>
+                    <p class="precio">$57.000</p>
+                    <p class="envio">Envio gratis</p>
+                </div>
+            </article>
+            <article class="homearticulo-producto">
+                <img class="home-producto" src="\images\Rig2.webp" alt="Producto">
+                <div class="home-descripcion">
+                    <p class="descripcion">Descripcion del producto</p>
+                    <p class="precio">$57.000</p>
+                    <p class="envio">Envio gratis</p>
+                </div>
+            </article>
+            <article class="homearticulo-producto">
+                <img class="home-producto" src="\images\Rig3.webp" alt="Producto">
+                <div class="home-descripcion">
+                    <p class="descripcion">Descripcion del producto</p>
+                    <p class="precio">$57.000</p>
+                    <p class="envio">Envio gratis</p>
+                </div>
+            </article>
+            <article class="homearticulo-producto">
+                <img class="home-producto" src="\images\Rig4.webp" alt="Producto">
+                <div class="home-descripcion">
+                    <p class="descripcion">Descripcion del producto</p>
+                    <p class="precio">$57.000</p>
+                    <p class="envio">Envio gratis  </p>
+                </div>
+            </article>
         </section>
-
-        <section>
-            <div class="products">
-                <article>
-                   <a href="/detalle"> <img width="25%" src="/images/rig.png" alt="rig"></a>
-                    <div>
-                        <p class="precio">$100.000</p>
-                        <p class= "descuento">50% OFF</p>
-
-                    </div>
-                </article>
-            </div>  
-        </section>
-
-        <section>
-            <div class="products">
-                <article>
-                    <a href="/detalle"><img width="25%" src="/images/rig.png" alt="rig"></a>
-                    <div>
-                        <p class="precio">$100.000</p>
-                        <p class= "descuento">50% OFF</p>
-
-                    </div>
-                </article>
-            </div>  
-        </section>
-
-        <section>
-            <div class="products">
-                <article>
-                    <a href="/detalle"><img width="25%" src="/images/rig.png" alt="rig"></a>
-                    <div>
-                        <p class="precio">$100.000</p>
-                        <p class= "descuento">50% OFF</p>
-
-                    </div>
-                </article>
-            </div>  
-        </section>
-
-        <section>
-            <div class="products">
-                <article>
-                    <a href="/detalle"><img width="25%" src="/images/rig.png" alt="rig"></a>
-                    <div>
-                        <p class="precio">$100.000</p>
-                        <p class= "descuento">50% OFF</p>
-
-                    </div>
-                </article>
-            </div>  
-        </section>
-
-        <section>
-            <div class="products">
-                <article>
-                    <a href="/detalle"><img width="25%" src="/images/rig.png" alt="rig"></a>
-                    <div>
-                        <p class="precio">$100.000</p>
-                        <p class= "descuento">50% OFF</p>
-
-                    </div>
-                </article>
-            </div>  
-        </section>
-    </div>    
     </main>
     <br>
+    <hr style="color: white; height: 0.5px;">
     <footer class="footer-distributed">
-
+        <hr style="color: white; height: 0.5px;">
         <div class="footer-left">
 
             <a class="cv" href="/"><img src="\images\Logotipo.png" width="45px" height="45px" alt="Logo" class="logo">Criptoventas</a>
