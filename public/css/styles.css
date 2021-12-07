@@ -514,7 +514,11 @@ main{
 
 
 /* aqui empieza el estilos Carrito */
-
+.header-carrito{
+	margin-bottom: 50px;
+	padding-top: 50px;
+	height: 0vh; 
+}
 .imagen1 {
 	border: 1px solid grey;
 	
