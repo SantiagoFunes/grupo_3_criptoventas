@@ -176,13 +176,9 @@ footer{
     justify-content: center;
     align-items: center;
     margin: auto;
-<<<<<<< HEAD
     margin-top: 50px;
 }
 
-=======
-}
->>>>>>> 19231a4943cb9afa8eeb13e166c24fb303bdebac
 .footer-distributed{
 	background: black;
 	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
@@ -456,12 +452,6 @@ cts:hover article{
 max-width: 100%;
 	
 }
-<<<<<<< HEAD
-
-
-
-
-=======
 /* estilos productos del home */
 .homesection-producto{
 	display: flex;
@@ -513,4 +503,3 @@ main{
     right: 20px;
     top: -15px;
 }
->>>>>>> 19231a4943cb9afa8eeb13e166c24fb303bdebac
