@@ -7,7 +7,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
         <link rel="stylesheet" href="css/styles.css">
-        <link rel="icon" type="image/x-icon" href="grupo_3_criptoventas\public\images/faviconn.ico">
+        <link rel="icon" type="image/x-icon" href="/images/faviconn.ico">
     </head>
     <body>
         <nav class="menu">
@@ -30,26 +30,70 @@
             <hr style="color: white; height: 0.5px;">
         </header>
 
-        <div class="contenedor">
-            <p>Subtotal: $0,00</p>
-              <div class="costo-envio">
-                  <label>Ciudad:</label>
-                  <select name="ciudad" class="control">
-                      <option value="baires">Buenos Aires</option>
-                      <option value="ros">Rosario</option>
-                      <option value="mdz">Mendoza</option>
-                  </select>
-              </div>
-            <p>Envio: $0,00</p>
-            <p>Total: $0,00</p>
-    
-              <div class="boton-comprar">
-                  
-                  <button class="estilo-boton-seguir"><a href="/" type="reset" > Seguir comprando</button>
-                  <button class="estilo-boton-comprar"><a href= "/pagar" type="submit"> Comprar! </button>
-                  
-              </div>
-          </div>
+        <div class="contenedor-carrito">
+            <div class="imagen-carrito">
+                <img width ="40%" src="./images/Rig.jpg" alt="Rig" class="imagen1" >
+                <div class="caja-boton-cantidad">    
+                    
+                    <a class="btn-minnus" href="#"><i class="fas fa-minus-square"></i></a>
+
+                    <div class= form-cantidad>
+                        <form action="/" method="POST">
+                        <input class="input-cantidad" type="text" name="qty" placeholder="Cantidad">
+                        </form>          
+                    </div>
+                    
+                    <a class="btn-plus" href="#"><i class="fas fa-plus-square"></i></a>
+                </div>
+                
+                <img width ="40%" src="./images/fuente.png" alt="fuente" class="imagen2" >
+                <div class="caja-boton-cantidad">    
+                    
+                    <a class="btn-minnus" href="#"><i class="fas fa-minus-square"></i></a>
+
+                    <div class= form-cantidad>
+                        <form action="/" method="POST">
+                        <input class="input-cantidad" type="text" name="qty" placeholder="Cantidad">
+                        </form>          
+                    </div>
+                    
+                    <a class="btn-plus" href="#"><i class="fas fa-plus-square"></i></a>
+                </div>
+                
+            </div>
+                
+                <div class="carritoCaja">
+                            <p>Subtotal: $0,00</p>
+                                <div class="costo-envio">
+                                <label>Ciudad:</label>
+                                <select name="ciudad" class="control">
+                                    <option value="baires">Buenos Aires</option>
+                                    <option value="ros">Rosario</option>
+                                    <option value="mdz">Mendoza</option>
+                                </select>
+                                </div>
+                            <p>Envio: $0,00</p>
+                            <p>Total: $0,00</p>
+                        
+
+                        <div class="boton-carrito">
+                        
+                            <button class="estilo-boton-seguir"><a href="/" type="reset" > Seguir comprando</button>
+
+                            <button class="estilo-boton-comprar"><a href= "/pagar" type="submit"> Confirmar compra </button>
+                        
+                        </div>
+                    
+<br>            
+                    <div class= form-cupon>
+                        <form action="/" method="POST">
+                        <input type="text" name="cupon" placeholder="Código promocional">
+                        </form>          
+
+                    
+                    </div>
+                </div>
+        </div>
 
         <footer class="footer-distributed">
 

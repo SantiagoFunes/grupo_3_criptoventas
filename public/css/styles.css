@@ -503,3 +503,110 @@ main{
     right: 20px;
     top: -15px;
 }
+
+
+
+
+
+
+
+
+
+
+/* aqui empieza el estilos Carrito */
+
+.imagen1 {
+	border: 1px solid grey;
+	
+	
+}
+.imagen2 {
+	border: 1px solid grey;
+	margin-top: 10px;
+	
+}
+
+.contenedor-carrito{
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	margin-top: 20px;
+	padding-left: 10px;
+}	
+
+.imagen-carrito , .carritoCaja{
+	width: 50%;
+}
+.imagen-carrito{
+	display: flex;
+	flex-direction: column;
+}
+
+.carritoCaja{
+	display: flex;
+	margin-left: 10px;
+	flex-direction: column;
+	text-align: center;
+	justify-content: right;
+}
+
+.boton-carrito {
+	padding-top: 15px;
+}
+
+.boton-carrito a{
+	text-decoration: none;
+	color: black;
+	
+}
+
+.estilo-boton-seguir{
+	background-color: chocolate;
+}
+
+.estilo-boton-seguir:hover{
+background-color: rgb(210, 51, 30);
+	transition: all 0.5s ease;
+	border-radius: 10px;
+}
+
+.estilo-boton-comprar{
+	background-color: green;
+	
+}
+
+.estilo-boton-comprar:hover{
+	background-color: rgb(105, 211, 18);
+	transition: all 0.5s ease;
+	border-radius: 10px;
+	
+}
+
+.btn-plus i{
+	background-color: white;
+	color: black;
+	
+}
+.btn-minnus i{
+	background-color: white;
+	color: black;
+
+}
+
+.form-cantidad, .caja-boton-cantidad{
+	
+	width: 50%;
+	
+}
+
+
+.caja-boton-cantidad{
+	display: flex;
+	justify-content: space-between;
+	align-items: stretch;
+	
+}
+
+.input-cantidad{
+	width: 65%;
+}
