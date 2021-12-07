@@ -583,13 +583,13 @@ background-color: rgb(210, 51, 30);
 }
 
 .btn-plus i{
-	background-color: white;
-	color: black;
+	background-color: black;
+	color: white;
 	
 }
 .btn-minnus i{
-	background-color: white;
-	color: black;
+	background-color: black;
+	color: white;
 
 }
 
@@ -599,14 +599,24 @@ background-color: rgb(210, 51, 30);
 	
 }
 
+.carritoCaja p{
+	color: white;
+	
+}
+.carritoCaja label{
+	color: white;
+	
+}
 
 .caja-boton-cantidad{
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
 	align-items: stretch;
+
 	
 }
 
 .input-cantidad{
-	width: 65%;
+	width: 100%;
+	text-align: center;
 }
