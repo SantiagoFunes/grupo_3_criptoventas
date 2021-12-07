@@ -16,19 +16,19 @@ app.get("/",(req,res) => {
  })
 
 app.get("/register",(req,res) => {
-    res.sendFile(path.resolve(__dirname, './views/users/register'))
+    res.render('users/register')
 })
 
 app.get("/login",(req,res) => {
-    res.sendFile(path.resolve(__dirname, './views/users/login'))
+    res.render('users/login')
 })
 
 app.get("/carrito",(req,res) => {
-    res.sendFile(path.resolve(__dirname, './views/products/carrito'))
+    res.render('products/carrito')
 })
 
-app.get("/detalle:idProducto",(req,res) => {
-    res.sendFile(path.resolve(__dirname, './views/products/detalle'))
+app.get("/detalle",(req,res) => {
+    res.render('products/detalle')
 })
 
 app.listen(process.env.PORT || 3000, ()=> {
