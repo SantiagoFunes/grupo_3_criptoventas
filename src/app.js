@@ -26,6 +26,9 @@ app.get("/login",(req,res) => {
 app.get("/carrito",(req,res) => {
     res.render('products/carrito')
 })
+app.get("/productos",(req,res) => {
+    res.render('products/productos')
+})
 
 app.get("/detalle",(req,res) => {
     res.render('products/detalle')
