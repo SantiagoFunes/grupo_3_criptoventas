@@ -6,17 +6,40 @@
     <div class="editor-creador">
         <div class="creador">
             <h2>Crear un producto</h2>
-            <ul>
-                <li><input type="text" name="name" id=""></li>   
-                <li><input type="text" name="description" id=""></li>   
-                <li><input type="image" name="image" id=""></li>   
-                <li><input type="text" name="category" id=""></li>   
-                <li><input type="text" name="color" id=""></li>   
-                <li><input type="number" name="price" id=""></li>   
+            <br>
+            <form action="/" method="POST">
+            <ul class="lista-crear">
+                <li><input type="text" name="name" placeholder="Nombre del producto"></li>   
+                <br>
+                <li><input type="text" name="description" placeholder="Descripcion"></li>      
+                <br>
+                <li><input type="text" name="category" placeholder="Elija la categoria"></li>  
+                <br> 
+                <li><input type="text" name="color" placeholder="Colores disponibles"></li>  
+                <br> 
+                <li><input type="text" name="price" placeholder="Ingrese el precio"></li>   
+                <br>
+                <li ><button type="button " onclick="uploadimage() ">
+                    Subir imagen
+                    </button></li>
+                <br>
+                <hr style="color: white; border-top:1px ; margin-bottom: 1px ;">
+                <li><input type="submit" value="Crear">  <input type="reset" value="Borrar"></li>
             </ul>
+            </form>
         </div>
         <div class="editor">
             <h2>Editar un producto</h2>
+            <p>Seleccionar el producto a editar</p>
+            <label>Producto:</label>
+            <select name="Producto" class="control">
+                <option value="Producto1">Producto1</option>
+                <option value="Producto2">Producto2</option>
+                <option value="Producto3">Producto3</option>
+                <option value="Producto4">Producto4</option>
+                <option value="Producto5">Producto5</option>
+
+            </select>
         </div>
     </div>
     <%- include('../partials/footer.ejs')%>
