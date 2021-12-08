@@ -33,7 +33,9 @@ app.get("/productos",(req,res) => {
 app.get("/detalle",(req,res) => {
     res.render('products/detalle')
 })
-
+app.get("/creacionyedicion",(req,res) => {
+    res.render('products/editor')
+})
 app.listen(process.env.PORT || 3000, ()=> {
     console.log("Servidor funcionando");
 })
