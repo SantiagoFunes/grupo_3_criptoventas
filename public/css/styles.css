@@ -302,7 +302,7 @@ header a{
 header{
 	margin-bottom: 50px;
 	padding-top: 50px;
-	height: 50vh; 
+	/* height: 50vh;  */
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -475,6 +475,7 @@ max-width: 100%;
 .home-producto{
 	height: 200px;
 	width: 200px;
+	object-fit: cover;
 }
 .home-descripcion{
 	text-align: center;
