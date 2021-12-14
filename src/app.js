@@ -11,25 +11,59 @@ app.set('view engine', 'ejs');
 const publicpath = path.resolve(__dirname,'../public');
 app.use(express.static(publicpath))
 
+// ************ Route System require and use() ************
+let rutasHome = require("./routes/rutaHome");
+let rutasDetalle = require("./routes/rutaDetalle");
+let rutasEditor = require("./routes/rutaEditor");
+let rutasCarrito = require("./routes/rutaCarrito");
+let rutasLogin = require("./routes/rutaLogin");
+let rutasRegister = require("./routes/rutaRegister");
+let rutasProductos = require("./routes/rutaProductos");
 
-app.get("/",(req,res) => {
-    res.render('products/home')
- })
+app.use("/",rutasHome);
+app.use("/detalle",rutasDetalle);
+app.use("/creacionyedicion",rutasEditor);
+app.use("/carrito",rutasCarrito);
+app.use("/login",rutasLogin);
+app.use("/register",rutasRegister);
+app.use("/productos",rutasProductos);
 
-app.get("/register",(req,res) => {
-    res.render('users/register')
-})
+// app.get("/",(req,res) => {
+//     res.render('products/home')
+//  })
 
-app.get("/login",(req,res) => {
-    res.render('users/login')
-})
+// app.get("/register",(req,res) => {
+//     res.render('users/register')
+// })
 
-app.get("/carrito",(req,res) => {
-    res.render('products/carrito')
-})
-app.get("/productos",(req,res) => {
-    res.render('products/productos')
-})
+// app.get("/login",(req,res) => {
+//     res.render('users/login')
+// })
+
+// app.get("/carrito",(req,res) => {
+//     res.render('products/carrito')
+// })
+// app.get("/productos",(req,res) => {
+//     res.render('products/productos')
+// })
+// app.get("/productos/:id", (req,res)=>{
+//     const paramId= parseInt(req.params.id, 10);
+//     const product= productList.find(productElement => productElement.id === paramId)
+//     if(product != null)
+//     {
+//         res.send(product);
+//     }
+//     else
+//     {
+//         res.status(404).json({msg: "No se encuentra el producto"})
+//     }
+// })
+// app.get("/detalle",(req,res) => {
+//     res.render('products/detalle')
+// })
+// app.get("/creacionyedicion",(req,res) => {
+//     res.render('products/editor')
+// })
 const productList=[
     {
         id:1,
@@ -47,18 +81,7 @@ const productList=[
         price:1000,
     }
 ]
-app.get("/productos/:id", (req,res)=>{
-    const paramId= parseInt(req.params.id, 10);
-    const product= productList.find(productElement => productElement.id === paramId)
-    if(product != null)
-    {
-        res.send(product);
-    }
-    else
-    {
-        res.status(404).json({msg: "No se encuentra el producto"})
-    }
-})
+
 app.delete("/productos/:id", (req,res)=>{
     const paramId= parseInt(req.params.id, 10);
     const productIndex= productList.findIndex(productElement => productElement.id === paramId)
@@ -78,12 +101,7 @@ app.post("/productos/:id", (req,res)=>{
     productList.push(product);
     res.status(201).json(product)
 })
-app.get("/detalle",(req,res) => {
-    res.render('products/detalle')
-})
-app.get("/creacionyedicion",(req,res) => {
-    res.render('products/editor')
-})
+
 app.listen(process.env.PORT || 3000, ()=> {
     console.log("Servidor funcionando");
 })
