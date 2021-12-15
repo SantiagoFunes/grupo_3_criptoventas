@@ -1,7 +1,9 @@
-
 let express=require ("express");
+const controllers = require("../controllers/homeController");
 let router = express.Router();
-router.get("/carrito",(req,res) => {
-    res.render('products/carrito')
-})
-module.exports=router;
+
+
+router.get("/", controllers.carrito)
+
+ module.exports=router;
+

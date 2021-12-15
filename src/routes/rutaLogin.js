@@ -1,6 +1,9 @@
 let express=require ("express");
+const controllers = require("../controllers/homeController");
 let router = express.Router();
-router.get("/login",(req,res) => {
-    res.render('users/login')
-})
-module.exports=router;
+
+
+router.get("/", controllers.login)
+
+ module.exports=router;
+

@@ -1,6 +1,8 @@
 let express=require ("express");
+const productsControllers = require("../controllers/productosController");
 let router = express.Router();
-router.get("/creacionyedicion",(req,res) => {
-    res.render('products/editor')
-})
-module.exports=router;
+
+
+router.get("/", productsControllers.editor)
+
+ module.exports=router;
