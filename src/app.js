@@ -12,14 +12,14 @@ const publicpath = path.resolve(__dirname,'../public');
 app.use(express.static(publicpath))
 
 // ************ Route System require and use() ************
-let rutasHome = require("./routes/rutaHome");
-let rutasDetalle = require("./routes/rutaDetalle");
-let rutasEditor = require("./routes/rutaEditor");
-let rutasCarrito = require("./routes/rutaCarrito");
-let rutasLogin = require("./routes/rutaLogin");
-let rutasRegister = require("./routes/rutaRegister");
-let rutasProductos = require("./routes/rutaProductos");
-
+let rutasHome = require("./routes/rutaHome.js");
+let rutasDetalle = require("./routes/rutaDetalle.js");
+let rutasEditor = require("./routes/rutaEditor.js");
+let rutasCarrito = require("./routes/rutaCarrito.js");
+let rutasLogin = require("./routes/rutaLogin.js");
+let rutasRegister = require("./routes/rutaRegister.js");
+let rutasProductos = require("./routes/rutaProductos.js");
+// ++++++++++++++++Use++++++++++++++++++++++
 app.use("/",rutasHome);
 app.use("/detalle",rutasDetalle);
 app.use("/creacionyedicion",rutasEditor);

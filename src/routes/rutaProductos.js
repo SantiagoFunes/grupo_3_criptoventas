@@ -16,3 +16,4 @@ router.get("/productos/:id", (req,res)=>{
     }
 })
 module.exports=router;
+

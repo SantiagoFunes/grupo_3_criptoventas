@@ -4,3 +4,4 @@ router.get("/",(req,res) => {
     res.render('products/home')
  })
  module.exports=router;
+
