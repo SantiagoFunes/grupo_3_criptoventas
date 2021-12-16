@@ -1,9 +1,9 @@
 
 const controllers = {
-    index:(req, res) => {res.render(path.resolve("./views/products/home"))},
-    login:(req, res) => {res.render(path.resolve('./views/users/login'))},
-    register:(req, res) => {res.render(path.resolve('./views/users/register'))},
-    carrito:(req, res) => {res.render(path.resolve('./views/products/carrito'))},
+    index:(req, res) => {res.render("products/home")},
+    login:(req, res) => {res.render('users/login')},
+    register:(req, res) => {res.render('users/register')},
+    carrito:(req, res) => {res.render('products/carrito')},
 }
 
 module.exports= controllers
