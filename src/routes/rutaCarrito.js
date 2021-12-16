@@ -1,9 +1,9 @@
-
 let express=require ("express");
-
+const controllers = require("../controllers/homeController");
 let router = express.Router();
 
-const carritoController = require("../controllers/carritoController")
-router.get("/carrito",)
 
-module.exports=router;
+router.get("/", controllers.carrito)
+
+ module.exports=router;
+

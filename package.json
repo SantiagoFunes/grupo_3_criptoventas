@@ -4,6 +4,7 @@
   "description": "En esta pagina se venden placas de video, rigs de mineria y se comercializa crypto, se apunta a cualquier persona interesada en incursionar en cryptomineria, inversionistas, o gente con ganas de gastar 500.000 pesos en una tarde.\r Los integrantes del grupo son:\r - Miguel:Tengo 25 años, soy de Avellaneda y estoy estudiando arquitectura pero siempre me interese por la programación desde un lado mas autodidacta.\r - Lucas:Soy estudiante de Psicologia, tengo 27 años, vivo en La Plata, y esta es mi primera vez incursionando en el mundo de la programacion.\r - Santiago: Tengo 24 años, soy estudiante de Ingeniería Eléctrica en la Universidad Nacional de Rosario, y actualmente trabajo en una empresa dedicada a la venta y asesoramiento de productos eléctricos.\r - Esteban: Tengo 27 años, actualmente estudio lic. en sistemas en la facultad de informatica de la UNLP, y trabajo en una clinica como facturista.\r # Las 5 Paginas web de e-comerce que usaremos como referencia son:\r - https://www.apple.com/\r - https://smokehaus.com.au/\r - https://getneuro.com/\r - https://www.skullcandy.com/\r - https://www.getwelly.com/\r # Wireframe del proyecto\r - https://wireframe.cc/pro/pp/ebf02f91d486863",
   "main": "index.js",
   "scripts": {
+    "go": "nodemon app.js",
     "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -20,6 +21,7 @@
   "dependencies": {
     "ejs": "^3.1.6",
     "express": "^4.17.1",
+    "multer": "^1.4.4",
     "nodemon": "^2.0.15"
   }
 }

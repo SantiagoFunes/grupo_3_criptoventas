@@ -505,15 +505,30 @@ main{
     top: -15px;
 }
 
-
-
-
-
-
-
-
-
-
+.register{
+	text-align: center;
+	color: white;
+	box-shadow: 0px 0px 10px rgb(82, 1, 1);
+	background-color: rgb(24, 23, 23);
+	margin: auto;
+	background-image:url(/images/fondo-textura.jpg);
+}
+.register:hover{
+	box-shadow: 0px 0px 10px rgb(202, 0, 0);
+	object-fit: cover;
+	}
+.login{
+	text-align: center;
+	color: white;
+	box-shadow: 0px 0px 10px rgb(82, 1, 1);
+	background-color: rgb(24, 23, 23);
+	margin: auto;
+	background-image:url(/images/fondo-textura.jpg);
+}
+.login:hover{
+	box-shadow: 0px 0px 10px rgb(202, 0, 0);
+	object-fit: cover;
+	}
 /* aqui empieza el estilos Carrito */
 .header-carrito{
 	margin-bottom: 50px;
@@ -625,3 +640,43 @@ background-color: rgb(210, 51, 30);
 	width: 100%;
 	text-align: center;
 }
+.editor-creador{
+	display: flex;
+	justify-content: space-around;
+	color: white;
+}
+.editor{
+	text-align: center;
+}
+.lista-crear{
+	list-style: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* hasta aca 665 */
