@@ -1,7 +1,9 @@
 
 let express=require ("express");
+
 let router = express.Router();
-router.get("/carrito",(req,res) => {
-    res.render('products/carrito')
-})
+
+const carritoController = require("../controllers/carritoController")
+router.get("/carrito",)
+
 module.exports=router;
