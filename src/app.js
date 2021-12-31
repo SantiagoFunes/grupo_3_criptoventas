@@ -13,16 +13,12 @@ app.use(express.static(publicpath))
 
 // ************ Route System require and use() ************
 let rutasHome = require("./routes/rutaHome.js");
-let rutasDetalle = require("./routes/rutaDetalle.js");
-let rutasEditor = require("./routes/rutaEditor.js");
 let rutasCarrito = require("./routes/rutaCarrito.js");
 let rutasLogin = require("./routes/rutaLogin.js");
 let rutasRegister = require("./routes/rutaRegister.js");
 let rutasProductos = require("./routes/rutaProductos.js");
 // ++++++++++++++++Use++++++++++++++++++++++
 app.use("/",rutasHome);
-app.use("/detalle",rutasDetalle);
-app.use("/creacionyedicion",rutasEditor);
 app.use("/carrito",rutasCarrito);
 app.use("/login",rutasLogin);
 app.use("/register",rutasRegister);

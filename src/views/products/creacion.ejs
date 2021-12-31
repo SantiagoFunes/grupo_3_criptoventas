@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<body>
+    <%- include('../partials/head.ejs')%>
+    <%- include('../partials/header.ejs')%>
+    <div class="editor-creador">
+        <div class="creador">
+            <h2>Crear un producto</h2>
+            <br>
+            <form action="/productos" method="POST" enctype="multipart/form-data">
+            <ul class="lista-crear">
+                <li><input type="text" name="name" placeholder="Nombre del producto"></li>   
+                <br>
+                <li><input type="text" name="description" placeholder="Descripcion"></li>      
+                <br>
+                <li><input type="text" name="brand" placeholder="Marca"></li>  
+                <br> 
+                <li><input type="text" name="model" placeholder="Modelo"></li>  
+                <br> 
+                <li><input type="text" name="price" placeholder="Precio"></li>   
+                <br>
+                <li ><input type="file" name="image"></li>
+                <br>
+                <hr style="color: white; border-top:1px ; margin-bottom: 1px ;">
+                <li><input type="submit" value="Crear">  <input type="reset" value="Borrar"></li>
+            </ul>
+            </form>
+        </div>
+    </div>
+    <%- include('../partials/footer.ejs')%>
+</body>
+</html>

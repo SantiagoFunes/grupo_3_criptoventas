@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<body>
     <%- include('../partials/head.ejs')%>
+<body>
+    
     <%- include('../partials/header.ejs')%>
     <br>
     <br>
@@ -29,79 +30,20 @@
                     </li>
                 </ul>
             </div>
+            <a href="/productos/creacion"><button>Crear Producto(Admin) </button></a>
         <section class="homesection-producto">
-            <a href="detalle"><article class="homearticulo-producto">
-                <img class="home-producto" src="\images\pin.webp" alt="Producto">
+            
+            <% for(let product of products){ %>
+            <a href="/productos/detalle/<%= product.id %>"><article class="homearticulo-producto">
+                <img class="home-producto" src="/images/<%= product.imagen %>" alt="Producto">
                 <div class="home-descripcion">
-                    <p class="descripcion">Pcie Splitter Mallado 8 Pines</p>
-                    <p class="precio">$1.449</p>
+                    <p class="nombre"><%= product.nombre %></p>
+                    <p class="descripcion"><%= product.descripcion %></p>
+                    <p class="precio"><%= product.imagen %></p>
                     <p class="envio">Envio gratis</p>
                 </div>
             </article></a>
-            <a href="detalle"><article class="homearticulo-producto">
-                <img class="home-producto" src="\images\Ram.webp" alt="Producto">
-                <div class="home-descripcion">
-                    <p class="descripcion">Memoria RAM Vengeance LPX</p>
-                    <p class="precio">$5.488</p>
-                    <p class="envio">Envio gratis</p>
-                </div>
-            </article></a>
-            <a href="detalle"><article class="homearticulo-producto">
-                <img class="home-producto" src="\images\intel.webp" alt="Producto">
-                <div class="home-descripcion">
-                    <p class="descripcion">Procesador Intel Core 2</p>
-                    <p class="precio">$4.499</p>
-                    <p class="envio">Envio gratis</p>
-                </div>
-            </article></a>
-            <a href="detalle"><article class="homearticulo-producto">
-                <img class="home-producto" src="\images\video.webp" alt="Producto">
-                <div class="home-descripcion">
-                    <p class="descripcion">Placa de video Nvidia Colorfu</p>
-                    <p class="precio">$47.000</p>
-                    <p class="envio">Envio gratis</p>
-                </div>
-            </article></a>
-            <a href="detalle"><article class="homearticulo-producto">
-                <img class="home-producto" src="\images\Motherboard4.webp" alt="Producto">
-                <div class="home-descripcion">
-                    <p class="descripcion">Descripcion del producto</p>
-                    <p class="precio">$57.000</p>
-                    <p class="envio">Envio gratis</p>
-                </div>
-            </article></a>
-            <a href="detalle"><article class="homearticulo-producto">
-                <img class="home-producto" src="\images\Rig1.webp" alt="Producto">
-                <div class="home-descripcion">
-                    <p class="descripcion">Descripcion del producto</p>
-                    <p class="precio">$57.000</p>
-                    <p class="envio">Envio gratis</p>
-                </div>
-            </article></a>
-            <a href="detalle"><article class="homearticulo-producto">
-                <img class="home-producto" src="\images\Rig2.webp" alt="Producto">
-                <div class="home-descripcion">
-                    <p class="descripcion">Descripcion del producto</p>
-                    <p class="precio">$57.000</p>
-                    <p class="envio">Envio gratis</p>
-                </div>
-            </article></a>
-            <a href="detalle"><article class="homearticulo-producto">
-                <img class="home-producto" src="\images\Rig3.webp" alt="Producto">
-                <div class="home-descripcion">
-                    <p class="descripcion">Descripcion del producto</p>
-                    <p class="precio">$57.000</p>
-                    <p class="envio">Envio gratis</p>
-                </div>
-            </article></a>
-            <a href="detalle"><article class="homearticulo-producto">
-                <img class="home-producto" src="\images\Rig4.webp" alt="Producto">
-                <div class="home-descripcion">
-                    <p class="descripcion">Descripcion del producto</p>
-                    <p class="precio">$57.000</p>
-                    <p class="envio">Envio gratis  </p>
-                </div>
-            </article></a>
+            <% } %>
         </section>
     </div>
     </main>
