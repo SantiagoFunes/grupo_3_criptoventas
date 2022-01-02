@@ -20,7 +20,12 @@
             </div>
       </section>
       <a href="/productos/<%= product.id %>/edicion"><button> Editar producto(Admin)</button></a>
-      <a href="/productos/<%= product.id %>"><button>Borrar Producto(Admin)</button></a>
+      
+      
+        <form method="POST" action="/productos/delete/<%= product.id %>?_method=DELETE">
+          <button onclick="return confirm('Quieres borrar este item?');" type="submit">Borrar Producto(Admin)</button>
+         </form>
+        
     <section>
         <br>
         <br>

@@ -18,8 +18,9 @@ router.get("/", productsControllers.todosLosProductos);
 router.get("/creacion", productsControllers.vistaCreacion);
 router.post("/",upload.single("image"), productsControllers.nuevoProducto);
 router.get("/:id/edicion", productsControllers.vistaEdicion);
+router.put("/:id",upload.single("image"),productsControllers.editarProducto);
 router.get("/detalle/:id", productsControllers.detalleProducto);
-router.delete("/:id", productsControllers.eliminarProducto);
+router.delete("/delete/:id", productsControllers.eliminarProducto);
 
 
 module.exports=router;

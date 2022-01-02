@@ -2,9 +2,10 @@ const express = require("express")
 const app = express()
 const path = require("path");
 const exp = require("constants");
+const methodOverride = require("method-override");
 const { json } = require("express");
 app.use(express.urlencoded({extended: true}))
-
+app.use(methodOverride('_method'));
 app.set('views', path.join(__dirname, '/views'));
 app.set('view engine', 'ejs');
 
@@ -24,42 +25,6 @@ app.use("/login",rutasLogin);
 app.use("/register",rutasRegister);
 app.use("/productos",rutasProductos);
 
-// app.get("/",(req,res) => {
-//     res.render('products/home')
-//  })
-
-// app.get("/register",(req,res) => {
-//     res.render('users/register')
-// })
-
-// app.get("/login",(req,res) => {
-//     res.render('users/login')
-// })
-
-// app.get("/carrito",(req,res) => {
-//     res.render('products/carrito')
-// })
-// app.get("/productos",(req,res) => {
-//     res.render('products/productos')
-// })
-// app.get("/productos/:id", (req,res)=>{
-//     const paramId= parseInt(req.params.id, 10);
-//     const product= productList.find(productElement => productElement.id === paramId)
-//     if(product != null)
-//     {
-//         res.send(product);
-//     }
-//     else
-//     {
-//         res.status(404).json({msg: "No se encuentra el producto"})
-//     }
-// })
-// app.get("/detalle",(req,res) => {
-//     res.render('products/detalle')
-// })
-// app.get("/creacionyedicion",(req,res) => {
-//     res.render('products/editor')
-// })
 const productList=[
     {
         id:1,

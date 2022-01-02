@@ -6,25 +6,24 @@
     <div class="editor-creador">
         <div class="editor">
             <h2>Editar un producto</h2>
-            <form action="/" method="POST">
+            <form action="/productos/<%= product.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
                 <ul class="lista-crear">
                     <li><input value="<%= product.nombre %>" type="text" name="name" placeholder="Nombre del producto"></li>   
                     <br>
                     <li><input value="<%= product.descripcion %>" type="text" name="description" placeholder="Descripcion"></li>      
                     <br>
-                    <li><input value="<%= product.marca %>" type="text" name="category" placeholder="Marca"></li>  
+                    <li><input value="<%= product.marca %>" type="text" name="brand" placeholder="Marca"></li>  
                     <br> 
-                    <li><input value="<%= product.modelo %>" type="text" name="color" placeholder="Modelo"></li>  
+                    <li><input value="<%= product.modelo %>" type="text" name="model" placeholder="Modelo"></li>  
                     <br> 
                     <li><input value="<%= product.precio %>" type="text" name="price" placeholder="Precio"></li>   
                     <br>
                     <img src="/images/<%= product.imagen %>" alt="Imagen del producto actual">
-                    <li ><button type="button" onclick="uploadimage() ">
-                        Editar imagen
-                        </button></li>
+                    <li ><input type="file" name="image"></li>
                     <br>
                     <hr style="color: white; border-top:1px ; margin-bottom: 1px ;">
-                    <li><input type="submit" value="Guardar">  <input type="reset" value="Borrar"></li>
+                    <li><input type="submit" value="Guardar"></li>  
+                    <li><input type="reset" value="Borrar"></li>
                 </ul>
                 </form>
         </div>
