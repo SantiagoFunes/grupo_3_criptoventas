@@ -1,9 +1,137 @@
-[  
-    {"id":1,"first_name":"Shandy","last_name":"Kain","email":"skain0@nifty.com","password":"02DnCHY6Od","category":"user","image":"user_1.jpg"},
-    {"id":2,"first_name":"Jazmin","last_name":"Megainey","email":"jmegainey1@archive.org","password":"nWKE7E","category":"user","image":"user_2.jpg"},
-    {"id":3,"first_name":"Madel","last_name":"Benezeit","email":"mbenezeit2@wikispaces.com","password":"C3c30K","category":"user","image":"user_3.jpg"},
-    {"id":4,"first_name":"Jasmin","last_name":"Rallin","email":"jrallin3@cyberchimps.com","password":"prMUHc7XR6L","category":"user","image":"user_4.jpg"},
-    {"id":5,"first_name":"Adelheid","last_name":"Lilloe","email":"alilloe4@seattletimes.com","password":"FyeXYrHa","category":"user","image":"user_5.jpg"},
-    {"id":6,"first_name":"Monica","last_name":"Keppe","email":"mkeppe5@theglobeandmail.com","password":"ul25ICjjqA","category":"user","image":"user_6.jpg"},
-    {"id":7,"first_name":"Jilleen","last_name":"Knight","email":"jknight6@dion.ne.jp","password":"syG3e2","category":"user","image":"user_7.jpg"}
+[
+  {
+    "id": 1,
+    "first_name": "Shandy",
+    "last_name": "Kain",
+    "email": "skain0@nifty.com",
+    "password": "02DnCHY6Od",
+    "category": "user",
+    "image": "user_1.jpg"
+  },
+  {
+    "id": 2,
+    "first_name": "Jazmin",
+    "last_name": "Megainey",
+    "email": "jmegainey1@archive.org",
+    "password": "nWKE7E",
+    "category": "user",
+    "image": "user_2.jpg"
+  },
+  {
+    "id": 3,
+    "first_name": "Madel",
+    "last_name": "Benezeit",
+    "email": "mbenezeit2@wikispaces.com",
+    "password": "C3c30K",
+    "category": "user",
+    "image": "user_3.jpg"
+  },
+  {
+    "id": 4,
+    "first_name": "Jasmin",
+    "last_name": "Rallin",
+    "email": "jrallin3@cyberchimps.com",
+    "password": "prMUHc7XR6L",
+    "category": "user",
+    "image": "user_4.jpg"
+  },
+  {
+    "id": 5,
+    "first_name": "Adelheid",
+    "last_name": "Lilloe",
+    "email": "alilloe4@seattletimes.com",
+    "password": "FyeXYrHa",
+    "category": "user",
+    "image": "user_5.jpg"
+  },
+  {
+    "id": 6,
+    "first_name": "Monica",
+    "last_name": "Keppe",
+    "email": "mkeppe5@theglobeandmail.com",
+    "password": "ul25ICjjqA",
+    "category": "user",
+    "image": "user_6.jpg"
+  },
+  {
+    "id": 7,
+    "first_name": "Jilleen",
+    "last_name": "Knight",
+    "email": "jknight6@dion.ne.jp",
+    "password": "syG3e2",
+    "category": "user",
+    "image": "user_7.jpg"
+  },
+  {
+    "id": 8,
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "password": "",
+    "category": "",
+    "imagen": "nouserimage.jpg"
+  },
+  {
+    "id": 9,
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "password": "",
+    "category": "",
+    "imagen": "nouserimage.jpg"
+  },
+  {
+    "id": 10,
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "password": "",
+    "category": "",
+    "imagen": "nouserimage.jpg"
+  },
+  {
+    "id": 11,
+    "first_name": "qqqqq",
+    "last_name": "qqqqqqqqqq",
+    "email": "hhhasjdaksdasd@gmail.com",
+    "password": "qqqqq",
+    "category": "qqqqqqq",
+    "imagen": "image-1643001197189.jpg"
+  },
+  {
+    "id": 12,
+    "first_name": "qq",
+    "last_name": "qqqqqqqqqqqqqq",
+    "email": "hhhasjdaksdasd@gmail.com",
+    "password": "qq",
+    "category": "qqqqqqqqqqqqq",
+    "imagen": "nouserimage.jpg"
+  },
+  {
+    "id": 13,
+    "first_name": "Esteban",
+    "last_name": "Tellechea",
+    "email": "hhhasjdaksdasd@gmail.com",
+    "password": "$2a$12$pN4gyJvRhhrEPuwwSE/jj.8swmm0qkhuZu9OkdssUXnxy54C3FHlG",
+    "category": "asda",
+    "imagen": "nouserimage.jpg"
+  },
+  {
+    "id": 14,
+    "first_name": "Guadalupe",
+    "last_name": "sdl´fmpsdfsdnf",
+    "email": "guada@ejemplo.com",
+    "password": "$2a$12$pW5TNPnObM1JqEXrAhkcBe1TTtc/zEfjvb1baYjZS/tJNcEvQ.rrC",
+    "category": "asdnansd",
+    "imagen": "nouserimage.jpg"
+  },
+  {
+    "id": 15,
+    "first_name": "Geronimo",
+    "last_name": "asdasd",
+    "email": "geronimo@horsefucker.com",
+    "password": "$2a$12$Qvn2Pvra98le7l2wdQL4N./2mG134891jH7nJiMjQiC81txg4G97a",
+    "category": "aweawe",
+    "imagen": "image-1643055650800.JPG"
+  }
 ]

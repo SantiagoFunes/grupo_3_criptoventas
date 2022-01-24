@@ -58,8 +58,8 @@ const productsControllers = {
         );
         let productName = "sin-imagen.jpg";
         if(req.file){
-            productName=req.file.filename
-        }
+           productName=req.file.filename
+         }
         const ultimoElemento = products.slice(-1)[0]
         const nuevoProducto = {
 
@@ -69,7 +69,7 @@ const productsControllers = {
             marca:req.body.brand,
             modelo:req.body.model,
             precio:req.body.price,
-            imagen:req.file.productName
+            imagen:productName
         }
         products.push(nuevoProducto)
         const newProducts = JSON.stringify(
