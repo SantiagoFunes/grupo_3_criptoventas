@@ -60,13 +60,14 @@ const usuariosController={
         }
         for(i=0; i<users.length; i++){
             if((users[i].email== req.body.email)&&(bcrypt.compareSync(req.body.pass,users[i].password))){
-                // res.send ("Bienvenido " + users[i].first_name)
+
                 
                 let usuarioaLoguearse = users[i];
                 req.session.usuarioLogueado=usuarioaLoguearse;
                 res.cookie("user_cookie", usuarioaLoguearse.email, { maxAge:70000});
-                res.redirect("/users/profile")
+                res.redirect("/users/profile")  
             }
+
         }
         
     },
