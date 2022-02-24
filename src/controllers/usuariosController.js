@@ -5,14 +5,23 @@ let usersController={}
 module.exports=usersController;
 const path = require('path')
 
+const{Usuario,Clase}=require("../../database/models")
+
 const usuariosController={
-    vistaUsuarios:(req,res)=>{
-        res.render('users/users.ejs')
+    vistaUsuarios:async(req,res)=>{
+        // res.render('users/users.ejs')
+        const users =  await Clase.findAll()
+        console.log(users);
+        res.send(users)
     },
     vistaRegister:(req,res)=>{
         res.render('users/register.ejs')
     },
     nuevoUsuario:(req,res)=>{
+
+        // let user = await User.findOne({
+        //     where: { email: req.body.email },
+        // });
         const usersFilePath = path.join(
             __dirname,
             "../database/users.json"
