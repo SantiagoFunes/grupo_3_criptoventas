@@ -33,9 +33,9 @@
             <a href="/productos/creacion"><button>Crear Producto(Admin) </button></a>
         <section class="homesection-producto">
             
-            <% for(let product of products){ %>
+            <% for(let product of productos){ %>
             <a href="/productos/detalle/<%= product.id %>"><article class="homearticulo-producto">
-                <img class="home-producto" src="/images/<%= product.imagen %>" alt="Producto">
+                <img class="home-producto" src="/images/<%= product.imagenes_producto[0].nombre_imagen %>" alt="Producto">
                 <div class="home-descripcion">
                     <p class="nombre"><%= product.nombre %></p>
                     <p class="descripcion"><%= product.descripcion %></p>

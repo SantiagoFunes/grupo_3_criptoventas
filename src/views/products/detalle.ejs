@@ -13,16 +13,16 @@
     <section class="detalle-producto">
 
         <div class="contenedor-producto">
-            <img class="imagen-producto" src="/images/<%= product.imagen %>" alt="placa" />
-            <span class="titulo-producto"><%= product.nombre %></span>
-            <span class="precio-producto"><%= product.precio %></span>
-            <span class="descripcion-producto"><%= product.descripcion %></span>
+            <img class="imagen-producto" src="/images/<%= productos.imagenes_producto[0].nombre_imagen %>" alt="placa" />
+            <span class="titulo-producto"><%= productos.nombre %></span>
+            <span class="precio-producto"><%= productos.precio %></span>
+            <span class="descripcion-producto"><%= productos.descripcion %></span>
             </div>
       </section>
-      <a href="/productos/<%= product.id %>/edicion"><button> Editar producto(Admin)</button></a>
+      <a href="/productos/<%= productos.id %>/edicion"><button> Editar producto(Admin)</button></a>
       
       
-        <form method="POST" action="/productos/delete/<%= product.id %>?_method=DELETE">
+        <form method="POST" action="/productos/delete/<%= productos.id %>?_method=DELETE">
           <button onclick="return confirm('Quieres borrar este item?');" type="submit">Borrar Producto(Admin)</button>
          </form>
         

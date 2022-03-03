@@ -178,5 +178,14 @@
     "modelo": "pppppppppppp",
     "precio": "ppppppppppppppp",
     "imagen": "image-1642998991134.jpg"
+  },
+  {
+    "id": 22,
+    "nombre": "",
+    "descripcion": "",
+    "marca": "",
+    "modelo": "",
+    "precio": "",
+    "imagen": "sin-imagen.jpg"
   }
 ]

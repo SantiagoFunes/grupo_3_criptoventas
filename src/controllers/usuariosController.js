@@ -1,18 +1,15 @@
 const fs= require("fs");
-let bcrypt = require("bcryptjs");
+let bcrypt = require("bcrypt");
 let usersController={}
 
 module.exports=usersController;
 const path = require('path')
 
-const{Usuario,Clase}=require("../../database/models")
+const{Usuario}=require("../../database/models")
 
 const usuariosController={
-    vistaUsuarios:async(req,res)=>{
-        // res.render('users/users.ejs')
-        const users =  await Clase.findAll()
-        console.log(users);
-        res.send(users)
+    vistaUsuarios:(req,res)=>{
+       res.render('users/users.ejs')
     },
     vistaRegister:(req,res)=>{
         res.render('users/register.ejs')
@@ -53,31 +50,26 @@ const usuariosController={
         // res.send(nuevoUsuario);
         res.redirect("/productos")
     },
-    processLogin:(req,res)=>{
+    processLogin:async(req,res)=>{
         
-        const usersFilePath = path.join(
-            __dirname,
-            "../database/users.json"
-        );
-        let archivoUsuario=fs.readFileSync(usersFilePath, "utf-8")
-        let users;
-        if(archivoUsuario==""){
-            users=[];
-
-        }else{
-            users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
-        }
-        for(i=0; i<users.length; i++){
-            if((users[i].email== req.body.email)&&(bcrypt.compareSync(req.body.pass,users[i].password))){
-
-                
-                let usuarioaLoguearse = users[i];
+            const user = await Usuario.findOne({where: {email:req.body.email}})
+            
+            if (user != undefined) {
+                if (bcrypt.compareSync(req.body.password, user.contraseña)) {
+                    var usuarioaLoguearse = user;
+                } else {
+                    res.send("Contraseña invalida")
+                    return
+                }
+            } else {
+                res.send("ERROR")
+                return
+            }
                 req.session.usuarioLogueado=usuarioaLoguearse;
                 res.cookie("user_cookie", usuarioaLoguearse.email, { maxAge:70000});
                 res.redirect("/users/profile")  
-            }
+            
 
-        }
         
     },
     logout:(req,res)=>{

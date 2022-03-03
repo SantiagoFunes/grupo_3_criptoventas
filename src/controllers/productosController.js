@@ -1,40 +1,30 @@
 const fs= require("fs");
+const{Producto,Clase,Imagenes_producto}=require("../../database/models")
 let productosController={}
-
+// const db = require('../../database/models');
+// const Clase
+// const products = db.Producto
 module.exports=productosController;
 const path = require('path')
 
 const productsControllers = {
-    todosLosProductos:(req, res) => {
-        const productsFilePath = path.join(
-            __dirname,
-            "../database/productos.json"
-        );
-        const products = JSON.parse(
-            fs.readFileSync(productsFilePath, "utf-8")
-        );
-        res.render('products/productos', {products})
+    todosLosProductos:async(req, res) => {
+        const productos =  await Producto.findAll({include:['imagenes_producto']})
+        
+        res.render('products/productos', {productos})
 
     },
-    detalleProducto:(req, res) => {
-        const productId = req.params.id;
-        const productsFilePath = path.join(
-            __dirname,
-            "../database/productos.json"
-        );
-        const products = JSON.parse(
-            fs.readFileSync(productsFilePath, "utf-8")
-        );
-        const product= products.find(product=> product.id==productId)
-        if(product != null){
-            res.render("products/detalle", {product}) 
-        }
-        else{
-            res.status(404).json({msg:"No se encontro el producto"})
-        }
+    detalleProducto:async(req, res) => {
+        const productos =  await Producto.findOne({where: {id:req.params.id}, include:['imagenes_producto']})
+        // res.send(productos);
+        res.render('products/detalle', {productos})
+
     },
-    vistaCreacion:(req, res) => {
-        res.render("products/creacion")
+    vistaCreacion:async(req, res) => {
+
+        const clases = await Clase.findAll();
+        
+        res.render("products/creacion",{clases});
     },
     vistaEdicion:(req, res) => {
         const productId = req.params.id;
@@ -48,36 +38,33 @@ const productsControllers = {
         const product= products.find(product=> product.id==productId)
         res.render("products/editor",{product})
     },
-    nuevoProducto:(req, res)=>{
-        const productsFilePath = path.join(
-            __dirname,
-            "../database/productos.json"
-        );
-        const products = JSON.parse(
-            fs.readFileSync(productsFilePath, "utf-8")
-        );
-        let productName = "sin-imagen.jpg";
-        if(req.file){
-           productName=req.file.filename
-         }
-        const ultimoElemento = products.slice(-1)[0]
-        const nuevoProducto = {
-
-            id:ultimoElemento.id+1,
-            nombre:req.body.name,
-            descripcion:req.body.description,
-            marca:req.body.brand,
-            modelo:req.body.model,
-            precio:req.body.price,
-            imagen:productName
+    nuevoProducto:async(req, res)=>{
+        try {
+        const nuevoProducto = await Producto.create({
+            nombre:req.body.nombre,
+            descripcion:req.body.descripcion,
+            marca:req.body.marca,
+            precio:req.body.precio,
+            clase_id:req.body.clase
+        });
+        if(req.files.length > 0){
+            for (let image of req.files) {
+                await Imagenes_producto.create({
+                    nombre_imagen: image.filename,
+                    producto_id: nuevoProducto.id,
+                });
+            };
+        }else{
+            await Imagenes_producto.create({
+                nombre_imagen: "sin-imagen.jpg",
+                producto_id: nuevoProducto.id,
+            });
         }
-        products.push(nuevoProducto)
-        const newProducts = JSON.stringify(
-            products
-        );
-        fs.writeFileSync(productsFilePath,newProducts)
-        res.redirect("/productos")
-
+        
+        res.redirect(`/productos/detalle/${nuevoProducto.id}`)
+        } catch (error) {
+        res.send(error)
+        }
     },
     editarProducto:(req,res)=>{
         const productId = parseInt(req.params.id, 10);

@@ -9,17 +9,24 @@
             <br>
             <form action="/productos" method="POST" enctype="multipart/form-data">
             <ul class="lista-crear">
-                <li><input type="text" name="name" placeholder="Nombre del producto"></li>   
+                <li><input required type="text" name="nombre" placeholder="Nombre del producto"></li>   
                 <br>
-                <li><input type="text" name="description" placeholder="Descripcion"></li>      
+                <li><input required type="text" name="descripcion" placeholder="Descripcion"></li>      
                 <br>
-                <li><input type="text" name="brand" placeholder="Marca"></li>  
+                <li><input required type="text" name="marca" placeholder="Marca"></li>  
                 <br> 
-                <li><input type="text" name="model" placeholder="Modelo"></li>  
+                <li><input required type="text" name="modelo" placeholder="Modelo"></li>  
                 <br> 
-                <li><input type="text" name="price" placeholder="Precio"></li>   
+                <li><input required type="text" name="precio" placeholder="Precio"></li>   
                 <br>
-                <li ><input type="file" name="image"></li>
+                <li><select required name="clase">
+                    <option value="" disabled selected hidden>Seleccione Clase</option>
+                    <% for (let clase of clases) {%>
+                    <option value="<%= clase.id %>"><%= clase.nombre %> </option>
+                    <% } %>
+                </select></li>
+                <br>
+                <li ><input type="file" multiple name="image"></li>
                 <br>
                 <hr style="color: white; border-top:1px ; margin-bottom: 1px ;">
                 <li><input type="submit" value="Crear">  <input type="reset" value="Borrar"></li>
