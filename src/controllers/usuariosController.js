@@ -5,7 +5,8 @@ let usersController={}
 module.exports=usersController;
 const path = require('path')
 
-const{Usuario}=require("../../database/models")
+const{Usuario}=require("../../database/models");
+const { isNull } = require("util");
 
 const usuariosController={
     vistaUsuarios:(req,res)=>{
@@ -14,42 +15,19 @@ const usuariosController={
     vistaRegister:(req,res)=>{
         res.render('users/register.ejs')
     },
-    nuevoUsuario:(req,res)=>{
-
-        // let user = await User.findOne({
-        //     where: { email: req.body.email },
-        // });
-        const usersFilePath = path.join(
-            __dirname,
-            "../database/users.json"
-        );
-        const users = JSON.parse(
-            fs.readFileSync(usersFilePath, "utf-8")
-        );
-        const ultimoElemento = users.slice(-1)[0]
-        let userName = "nouserimage.jpg";
-        if(req.file){
-           userName=req.file.filename
-         }
-        const nuevoUsuario = {
-
-            id:ultimoElemento.id+1,
-            
-            first_name:req.body.name,
-            last_name:req.body.last_name,
+    nuevoUsuario:async function(req,res){
+        await Usuario.create({
+            nombre:req.body.name,
+            apellido:req.body.last_name,
             email:req.body.email,
-            password:bcrypt.hashSync(req.body.pass,12),
-            category:req.body.category,
-            imagen:userName
-        }
-        users.push(nuevoUsuario)
-        const newUsers = JSON.stringify(
-            users
-        );
-        fs.writeFileSync(usersFilePath,newUsers)
-        // res.send(nuevoUsuario);
-        res.redirect("/productos")
+            contraseña:req.body.pass,
+            rol:req.body.category,
+            img:req.file.filename  
+        });
+        res.redirect("/users")
+
     },
+    
     processLogin:async(req,res)=>{
         
             const user = await Usuario.findOne({where: {email:req.body.email}})

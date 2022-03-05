@@ -9,17 +9,17 @@
             <br>
             <form action="/users" method="POST" enctype="multipart/form-data">
                 <ul class="lista-crear">
-                    <li><input type="text" name="name" placeholder="Nombre"></li>
+                    <li><input required type="text" name="name" placeholder="Nombre"></li>
                     <br>
-                    <li><input type="text" name="last_name" placeholder="Apellido"></li>
+                    <li><input required type="text" name="last_name" placeholder="Apellido"></li>
                     <br>
-                    <li><input type="email" name="email" placeholder="e-mail"></li>
+                    <li><input required type="email" name="email" placeholder="e-mail"></li>
                     <br>
-                    <li><input type="password" name="pass" placeholder="Elegí tu contraseña"></li>
+                    <li><input required type="password" name="pass" placeholder="Elegí tu contraseña"></li>
                     <br>
-                    <li><input type="text" name="category" placeholder="Categoria"></li>
+                    <li><input required type="text" name="category" placeholder="Categoria"></li>
                     <br>
-                    <li><input type="file" name="image" placeholder="Imagen de usuario"></li>
+                    <li><input  type="file" name="image" placeholder="Imagen de usuario"></li>
                     <br>
                     <li><input type="submit" value="Enviar">
                     <input type="reset" value="Borrar"></li>

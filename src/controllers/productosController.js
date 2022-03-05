@@ -66,54 +66,42 @@ const productsControllers = {
         res.send(error)
         }
     },
-    editarProducto:(req,res)=>{
-        const productId = parseInt(req.params.id, 10);
-        const productsFilePath = path.join(
-            __dirname,"../database/productos.json"
-        );
-        const products = JSON.parse(
-            fs.readFileSync(productsFilePath, "utf-8")
-        );
+    editarProducto:async(req,res)=>{
+        // const productId = parseInt(req.params.id, 10);
+        // const productsFilePath = path.join(
+        //     __dirname,"../database/productos.json"
+        // );
+        // const products = JSON.parse(
+        //     fs.readFileSync(productsFilePath, "utf-8")
+        // );
+        // const product= products.findIndex(product=> product.id===productId);
+        // products[product].nombre=req.body.name
+        // products[product].descripcion=req.body.description
+        // products[product].marca=req.body.brand
+        // products[product].modelo=req.body.model
+        // products[product].precio=req.body.price
         
 
+        // if(req.file){
+        //     products[product].imagen=req.file.filename
+        // }
 
-
-        const product= products.findIndex(product=> product.id===productId);
-        products[product].nombre=req.body.name
-        products[product].descripcion=req.body.description
-        products[product].marca=req.body.brand
-        products[product].modelo=req.body.model
-        products[product].precio=req.body.price
-        
-
-        if(req.file){
-            products[product].imagen=req.file.filename
-        }
-
-        const updatedProducts = JSON.stringify(
-            products
-        );
-        fs.writeFileSync(productsFilePath,updatedProducts)
-        res.redirect(`/productos/detalle/${req.params.id}`)
+        // const updatedProducts = JSON.stringify(
+        //     products
+        // );
+        // fs.writeFileSync(productsFilePath,updatedProducts)
+        // res.redirect(`/productos/detalle/${req.params.id}`)
     },
-    eliminarProducto:(req, res) =>{
-        const productId = parseInt(req.params.id, 10);
-        const productsFilePath = path.join(
-            __dirname,"../database/productos.json"
-        );
-        const products = JSON.parse(
-            fs.readFileSync(productsFilePath, "utf-8")
-        );
-        const product= products.findIndex(product=> product.id===productId);
-        products.splice(product,1);
-        const newProducts = JSON.stringify(
-            products
-        );
-        fs.writeFileSync(productsFilePath,newProducts)
+    eliminarProducto:async(req, res) =>{
+        let productoDestruir = req.params.id;
+        await Imagenes_producto.destroy({
+            where:{producto_id: productoDestruir}
+        });
         res.redirect("/productos")
-        
+         await Producto.destroy({
+             where:{id: productoDestruir}
+         });
     }
-
 }
 
 module.exports= productsControllers;
