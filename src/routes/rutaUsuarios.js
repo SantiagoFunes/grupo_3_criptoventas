@@ -3,7 +3,7 @@ const usuariosController = require("../controllers/usuariosController");
 let router = express.Router();
 const path = require("path");
 const multer = require("multer");
-const { check } = require("express-validator");
+const { check, oneOf } = require("express-validator");
 const authMiddleware = require("../../middlewares/authMiddleware");
 const storage = multer.diskStorage({
     destination: path.resolve(__dirname, "../../public/images"),
@@ -19,12 +19,21 @@ const upload=multer({storage:storage})
 router.get("/", usuariosController.vistaUsuarios);
 router.get("/profile",authMiddleware,usuariosController.vistaPerfil);
 router.get("/register", usuariosController.vistaRegister);
-router.post("/",upload.single("image"), usuariosController.nuevoUsuario);
+router.delete("/delete/:id", usuariosController.eliminarUsuario);
+router.post("/",
+
+    // check('name', 'Name length should be 10 to 20 characters')
+    // .isLength({ min: 10, max: 20 }),
+    // check('last_name', 'Last name length should be 10 to 20 characters')
+    // .isLength({ min: 10, max: 20 }),
+
+
+upload.single("image"), usuariosController.nuevoUsuario);
 router.get("/logout",authMiddleware,usuariosController.logout)
 router.post("/login"
  ,[
      check("email").isEmail().withMessage("e-mail invalido"),
-     check("pass").isLength({min:8}).withMessage("Debe tener como minimo 8 caracteres")
+
  ] 
 ,usuariosController.processLogin);
 router.get("/check", function(req,res){
@@ -35,9 +44,5 @@ router.get("/prueba", function(req,res){
     let numero =  req.session.nro;
     res.send ("se ingreso " + numero);
 });
-// router.put("/:id",upload.single("image"),usuariosController.editarProducto);
-// router.get("/detalle/:id", usuariosController.detalleProducto);
-// router.delete("/delete/:id", usuariosController.eliminarProducto);
-
 
 module.exports=router;

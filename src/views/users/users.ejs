@@ -12,6 +12,14 @@
     
     <main class="login">
         <h1>Log in</h1>
+        <% if (typeof errors != "undefined"){ %>
+            <p style="color: red;">ERROR!!</p>
+            <ul>
+                <% for (let i = 0; i < errors.length; i++){ %>
+                <li><%= errors[i].msg %></li>
+                <% } %>
+            </ul>
+            <% } %>
         <br>
         <form action="/users/login" method="POST">
             <input type="text" name="email" placeholder="Ingrese su e-mail">

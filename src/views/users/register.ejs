@@ -7,17 +7,23 @@
         <main class="register">
             <h1>Registración de usuarios</h1>
             <br>
+            <% if (typeof errors != "undefined"){ %>
+                <p style="color: red;">ERROR!!</p>
+                <ul>
+                    <% for (let i = 0; i < errors.length; i++){ %>
+                    <li><%= errors[i].msg %></li>
+                    <% } %>
+                </ul>
+                <% } %>
             <form action="/users" method="POST" enctype="multipart/form-data">
                 <ul class="lista-crear">
-                    <li><input required type="text" name="name" placeholder="Nombre"></li>
+                    <li><input required type="text" name="name" id="name" placeholder="Nombre"></li>
                     <br>
                     <li><input required type="text" name="last_name" placeholder="Apellido"></li>
                     <br>
                     <li><input required type="email" name="email" placeholder="e-mail"></li>
                     <br>
                     <li><input required type="password" name="pass" placeholder="Elegí tu contraseña"></li>
-                    <br>
-                    <li><input required type="text" name="category" placeholder="Categoria"></li>
                     <br>
                     <li><input  type="file" name="image" placeholder="Imagen de usuario"></li>
                     <br>

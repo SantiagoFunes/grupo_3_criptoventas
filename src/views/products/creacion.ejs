@@ -6,7 +6,16 @@
     <div class="editor-creador">
         <div class="creador">
             <h2>Crear un producto</h2>
+            <% if (typeof errors != "undefined"){ %>
+                <p style="color: red;">ERROR!!</p>
+                <ul>
+                    <% for (let i = 0; i < errors.length; i++){ %>
+                    <li><%= errors[i].msg %></li>
+                    <% } %>
+                </ul>
+                <% } %>
             <br>
+
             <form action="/productos" method="POST" enctype="multipart/form-data">
             <ul class="lista-crear">
                 <li><input required type="text" name="nombre" placeholder="Nombre del producto"></li>   

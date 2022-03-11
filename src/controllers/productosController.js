@@ -1,7 +1,7 @@
 const fs= require("fs");
 const{Producto,Clase,Imagenes_producto}=require("../../database/models")
 let productosController={}
-// const db = require('../../database/models');
+const db = require('../../database/models');
 // const Clase
 // const products = db.Producto
 module.exports=productosController;
@@ -26,17 +26,20 @@ const productsControllers = {
         
         res.render("products/creacion",{clases});
     },
-    vistaEdicion:(req, res) => {
-        const productId = req.params.id;
-        const productsFilePath = path.join(
-            __dirname,
-            "../database/productos.json"
-        );
-        const products = JSON.parse(
-            fs.readFileSync(productsFilePath, "utf-8")
-        );
-        const product= products.find(product=> product.id==productId)
-        res.render("products/editor",{product})
+    vistaEdicion:async(req, res) => {
+        const clases =  await Clase.findAll();
+        const productos =  await Producto.findOne({where: {id:req.params.id}, include:['imagenes_producto']})
+        res.render('products/editor', {productos,clases})
+    },
+    search: async (req,res)=>{
+        const loQueBuscoElUsuario = req.query.keyword;
+        const productos = await Producto.findAll({
+            where: {
+                nombre:{[db.Sequelize.Op.like]:`%${loQueBuscoElUsuario}%`} 
+            },include:['imagenes_producto']
+        })
+        
+        res.render('products/productos', {productos})
     },
     nuevoProducto:async(req, res)=>{
         try {
@@ -66,31 +69,20 @@ const productsControllers = {
         res.send(error)
         }
     },
-    editarProducto:async(req,res)=>{
-        // const productId = parseInt(req.params.id, 10);
-        // const productsFilePath = path.join(
-        //     __dirname,"../database/productos.json"
-        // );
-        // const products = JSON.parse(
-        //     fs.readFileSync(productsFilePath, "utf-8")
-        // );
-        // const product= products.findIndex(product=> product.id===productId);
-        // products[product].nombre=req.body.name
-        // products[product].descripcion=req.body.description
-        // products[product].marca=req.body.brand
-        // products[product].modelo=req.body.model
-        // products[product].precio=req.body.price
+    editarProducto:async(req,res)=>{ // POR ALGUNA RAZON NO FUNCIONA ESTE
+        await Producto.update({
+                nombre:req.body.name,
+                descripcion:req.body.description,
+                marca:req.body.brand,
+                precio:req.body.price,
+                clase_id:req.body.model
+        },{
+            
+            where:{ id: req.params.id}
         
+        });
 
-        // if(req.file){
-        //     products[product].imagen=req.file.filename
-        // }
-
-        // const updatedProducts = JSON.stringify(
-        //     products
-        // );
-        // fs.writeFileSync(productsFilePath,updatedProducts)
-        // res.redirect(`/productos/detalle/${req.params.id}`)
+        res.redirect("/productos/detalle/" + req.params.id)
     },
     eliminarProducto:async(req, res) =>{
         let productoDestruir = req.params.id;

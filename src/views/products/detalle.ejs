@@ -19,13 +19,14 @@
             <span class="descripcion-producto"><%= productos.descripcion %></span>
             </div>
       </section>
+      <% if(user != undefined ){if(user.rol===2){%>
       <a href="/productos/<%= productos.id %>/edicion"><button> Editar producto(Admin)</button></a>
       
       
         <form method="POST" action="/productos/delete/<%= productos.id %>?_method=DELETE">
-          <button onclick="return confirm('Quieres borrar este item?');" type="submit">Borrar Producto(Admin)</button>
+          <button onclick="confirm('Quieres borrar este item?');" type="submit">Borrar Producto(Admin)</button>
          </form>
-        
+         <% }} %>
     <section>
         <br>
         <br>

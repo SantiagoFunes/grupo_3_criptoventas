@@ -16,7 +16,12 @@
         <li class="header-a"><a href="/productos">Productos <i class="fas fa-shopping-bag"></i></li>
         <li class="header-a"><a href="/carrito">Tu carrito <i class="fas fa-shopping-cart"></i> </a></li>
      </ul>
-     <div class="form"><input type="search" name="Buscar" id="buscador"> <i class="fas fa-search"></i></div>
+     <form action="/productos/buscar" method="GET">
+        <div class="form">
+            <input type="text" name="keyword" id="buscador"> 
+            <input type="submit" value="Buscar">
+        </div>
+    </form>
  </nav>
 
 <header>

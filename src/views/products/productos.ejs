@@ -30,7 +30,9 @@
                     </li>
                 </ul>
             </div>
+            <% if(user != undefined ){if(user.rol===2){%>
             <a href="/productos/creacion"><button>Crear Producto(Admin) </button></a>
+            <% }} %>
         <section class="homesection-producto">
             
             <% for(let product of productos){ %>
