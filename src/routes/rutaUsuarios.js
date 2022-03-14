@@ -1,9 +1,9 @@
-let express=require ("express");
-const usuariosController = require("../controllers/usuariosController");
-let router = express.Router();
+let express = require ("express");
 const path = require("path");
 const multer = require("multer");
-const { check, oneOf } = require("express-validator");
+const usuariosController = require("../controllers/usuariosController");
+let router = express.Router();
+const { check,body } = require("express-validator");
 const authMiddleware = require("../../middlewares/authMiddleware");
 const storage = multer.diskStorage({
     destination: path.resolve(__dirname, "../../public/images"),
@@ -16,19 +16,24 @@ const storage = multer.diskStorage({
 });
 const upload=multer({storage:storage})
 
+
 router.get("/", usuariosController.vistaUsuarios);
 router.get("/profile",authMiddleware,usuariosController.vistaPerfil);
+router.put("/:id",authMiddleware,upload.single("image"), usuariosController.editarUsuario);
 router.get("/register", usuariosController.vistaRegister);
+router.get("/:id/edicion", usuariosController.vistaEdicion);
 router.delete("/delete/:id", usuariosController.eliminarUsuario);
-router.post("/",
+router.post("/registro", upload.single("image"),
+[
+    body('name','Name is required').exists()
+    .isLength({ min: 5, max: 20 }),
+    body('last_name', 'Last name length should be 10 to 20 characters')
+    .exists()
+    .isLength({ min: 5, max: 20 }),
+],
+    
+    usuariosController.nuevoUsuario);
 
-    // check('name', 'Name length should be 10 to 20 characters')
-    // .isLength({ min: 10, max: 20 }),
-    // check('last_name', 'Last name length should be 10 to 20 characters')
-    // .isLength({ min: 10, max: 20 }),
-
-
-upload.single("image"), usuariosController.nuevoUsuario);
 router.get("/logout",authMiddleware,usuariosController.logout)
 router.post("/login"
  ,[

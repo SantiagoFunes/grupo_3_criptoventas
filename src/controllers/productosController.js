@@ -69,7 +69,7 @@ const productsControllers = {
         res.send(error)
         }
     },
-    editarProducto:async(req,res)=>{ // POR ALGUNA RAZON NO FUNCIONA ESTE
+    editarProducto:async(req,res)=>{ 
         await Producto.update({
                 nombre:req.body.name,
                 descripcion:req.body.description,

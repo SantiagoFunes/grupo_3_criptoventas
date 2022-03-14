@@ -7,7 +7,7 @@
         <div>
             <div>
                 <ul class="profileList">
-                    <li><img class="profileImg" src="/images/<%= user.img %>" alt="Imagen de usuario"></li>
+                    <li><img class="profileImg" src="/images/<%=user.img%>" alt="Imagen de usuario"></li>
                     <li><%= user.nombre + " " + user.apellido %></li>
                     <li><%=user.email%></li>
                     <li><%=user.rol%></li>
@@ -15,7 +15,7 @@
                 <form method="POST" action="/users/delete/<%= user.id %>?_method=DELETE">
                     <button onclick="confirm('Quieres borrar tu usuario?');" type="submit">Borrar Usuario</button>
                 </form>
-                <a href=""><button>Editar usuario</button></a>
+                <a href="/users/<%= user.id %>/edicion"><button>Editar usuario</button></a>
             </div>
         </div>
     </main>

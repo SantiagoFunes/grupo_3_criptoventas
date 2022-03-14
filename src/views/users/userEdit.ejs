@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <%- include('../partials/head.ejs')%>
+    <%- include('../partials/header.ejs')%>
+    <div class="editor-creador">
+        <div class="editor">
+            <h2>Editar tu usuario</h2>
+            <% if (typeof errors != "undefined"){ %>
+                <p style="color: red;">ERROR!!</p>
+                <ul>
+                    <% for (let i = 0; i < errors.length; i++){ %>
+                    <li><%= errors[i].msg %></li>
+                    <% } %>
+                </ul>
+                <% } %>
+            <form action="/users/<%= user.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+                <ul class="lista-crear">
+                    <label for="mail">Tu mail</label>
+                    <li><input required value="<%= user.email %>" type="text" name="mail" placeholder="mail"></li>   
+                    <br>
+                    <label for="nombre">Tu nombre</label>
+                    <li><input required value="<%= user.nombre + ' ' + user.apellido %>" type="text" name="nombre" placeholder="nombre"></li>      
+                    <br>
+                    <label for="apellido">Tu apellido</label>
+                    <li><input required value="<%= user.apellido %>" type="text" name="apellido" placeholder="apellido"></li>      
+                    <br>
+                    <label for="image">Tu foto de perfil</label>
+                    <img class="profileImg" src="/images/<%= user.img %>" alt="Imagen actual" >
+                    <li ><input type="file" name="image"></li>
+                    <br>
+                    <hr style="color: white; border-top:1px ; margin-bottom: 1px ;">
+                    <li><input type="submit" value="Guardar"></li>  
+                    <li><input type="reset" value="Restablecer campos"></li>
+                </ul>
+                </form>
+        </div>
+    </div>
+    <%- include('../partials/footer.ejs')%>
+</body>
+</html>
