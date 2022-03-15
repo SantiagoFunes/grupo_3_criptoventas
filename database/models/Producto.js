@@ -12,7 +12,10 @@ let cols = {
    },
    precio:{
        type:dataTypes.INTEGER(11)
-   }
+   },
+    modelo:{
+        type:dataTypes.STRING(255)
+    }
 }
 let config={
     tableName:"products",

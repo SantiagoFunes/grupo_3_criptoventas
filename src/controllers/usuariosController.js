@@ -40,7 +40,7 @@ const usuariosController={
                     },
                 });
 
-            if (userDB != null) return ResponseError({res,path:"/users/register",message:"El email del usuario ya se encuentra registrado"})
+            if (userDB != null) return ResponseError({res,path:"users/register",message:"El email del usuario ya se encuentra registrado"})
             
             let filename = "nouserimage.jpg"
             if (req.file){
@@ -50,7 +50,7 @@ const usuariosController={
                     filename=req.file.filename
                 }
                 else {
-                    return ResponseError({res,path:"/users/register",message:"Formato de imagen incorrecto"})
+                    return ResponseError({res,path:"users/register",message:"Formato de imagen incorrecto"})
                 }
             }
             await Usuario.create({

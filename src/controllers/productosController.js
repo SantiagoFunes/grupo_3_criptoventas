@@ -47,15 +47,19 @@ const productsControllers = {
             nombre:req.body.nombre,
             descripcion:req.body.descripcion,
             marca:req.body.marca,
+            modelo:req.body.modelo,
             precio:req.body.precio,
             clase_id:req.body.clase
         });
         if(req.files.length > 0){
             for (let image of req.files) {
-                await Imagenes_producto.create({
-                    nombre_imagen: image.filename,
-                    producto_id: nuevoProducto.id,
-                });
+                const validationExtensionImage = ['jpeg','jpg','png','gif'].includes(image.filename.toLowerCase().split('.')[1])
+                if(validationExtensionImage){
+                    await Imagenes_producto.create({
+                     nombre_imagen: image.filename,
+                        producto_id: nuevoProducto.id,
+                 });
+                }
             };
         }else{
             await Imagenes_producto.create({
@@ -75,6 +79,7 @@ const productsControllers = {
                 descripcion:req.body.description,
                 marca:req.body.brand,
                 precio:req.body.price,
+                modelo:req.body.modelo,
                 clase_id:req.body.model
         },{
             

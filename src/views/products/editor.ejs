@@ -22,6 +22,8 @@
                     <br>
                     <li><input required value="<%= productos.marca %>" type="text" name="brand" placeholder="Marca"></li>  
                     <br> 
+                    <li><input required value="<%= productos.modelo %>" type="text" name="modelo" placeholder="Modelo"></li>  
+                    <br> 
                     <li><select required name="model">
                         <option value="" disabled selected hidden>Seleccione Clase</option>
                         <% for (let i = 0 ; i < clases.length; i++) {%>
@@ -31,7 +33,7 @@
                     <br> 
                     <li><input required value="<%= productos.precio %>" type="text" name="price" placeholder="Precio"></li>   
                     <br>
-                    <img src="/images/<%= productos.imagenes_producto[0].nombre_imagen %>" alt="Imagen del producto actual">
+                    <img class="imagen-producto" src="/images/<%= productos.imagenes_producto[0].nombre_imagen %>" alt="Imagen del producto actual">
                     <li ><input type="file" name="image"></li>
                     <br>
                     <hr style="color: white; border-top:1px ; margin-bottom: 1px ;">

@@ -5,11 +5,11 @@
         <%- include('../partials/header.ejs')%>
         <main class="login">
             <h1>Formulario de Log in</h1>
-            <% if (typeof errors != "undefined"){ %>
+            <% if (typeof validaciones != "undefined"){ %>
                 <p style="color: red;">ERROR!!</p>
                 <ul>
-                    <% for (let i = 0; i < errors.length; i++){ %>
-                    <li><%= errors[i].msg %></li>
+                    <% for (let i = 0; i < validaciones.length; i++){ %>
+                    <li><%= validaciones[i].msg %></li>
                     <% } %>
                 </ul>
                 <% } %>

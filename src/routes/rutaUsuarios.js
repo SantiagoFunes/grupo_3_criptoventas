@@ -3,7 +3,7 @@ const path = require("path");
 const multer = require("multer");
 const usuariosController = require("../controllers/usuariosController");
 let router = express.Router();
-const { check,body } = require("express-validator");
+const { body,validationResult } = require("express-validator");
 const authMiddleware = require("../../middlewares/authMiddleware");
 const storage = multer.diskStorage({
     destination: path.resolve(__dirname, "../../public/images"),
@@ -23,21 +23,41 @@ router.put("/:id",authMiddleware,upload.single("image"), usuariosController.edit
 router.get("/register", usuariosController.vistaRegister);
 router.get("/:id/edicion", usuariosController.vistaEdicion);
 router.delete("/delete/:id", usuariosController.eliminarUsuario);
+
+// validaciones de registro
+
 router.post("/registro", upload.single("image"),
 [
-    body('name','Name is required').exists()
-    .isLength({ min: 5, max: 20 }),
-    body('last_name', 'Last name length should be 10 to 20 characters')
-    .exists()
-    .isLength({ min: 5, max: 20 }),
-],
-    
+   
+        body('name','Debe ingresar un nombre con mas de 2 caracteres')
+        .exists()
+        .isLength({ min: 2 }),
+        body('last_name','Debe ingresar un apellido con mas de 2 caracteres')
+        .exists()
+        .isLength({ min: 2 }),
+        body('email','Email invalido')
+        .exists()
+        .isEmail(),
+        body('pass','La contraseña debe tener mas de 8 caracteres')
+        .exists()
+        .isLength({min:8}),
+      ],(req,res)=>{
+        const errors = validationResult(req);
+        if (!errors.isEmpty()) {
+            
+            const valores = req.body
+            const validaciones = errors.array()
+
+            res.render('users/register',{validaciones:validaciones})
+        }
+      },
+
     usuariosController.nuevoUsuario);
 
 router.get("/logout",authMiddleware,usuariosController.logout)
 router.post("/login"
  ,[
-     check("email").isEmail().withMessage("e-mail invalido"),
+    body("email").isEmail().withMessage("Credenciales invalidas"),
 
  ] 
 ,usuariosController.processLogin);

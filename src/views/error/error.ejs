@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <%- include('../partials/head.ejs')%>
+    <%- include('../partials/header.ejs')%>
+    <div class="editor-creador">
+        <div class="editor">
+            <h2>Oops, hubo un error</h2>
+            <% if (typeof validaciones != "undefined"){ %>
+                <p style="color: red;">ERROR!!</p>
+                <ul>
+                    <% for (let i = 0; i < validaciones.length; i++){ %>
+                    <li><%= validaciones[i].msg %></li>
+                    <% } %>
+                </ul>
+                <% } %>
+        </div>
+    </div>
+    <%- include('../partials/footer.ejs')%>
+</body>
+</html>

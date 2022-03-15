@@ -18,7 +18,7 @@
     },
     img:{
         type:dataTypes.STRING(255)
-    },
+    }
  };
  let config={
      tableName:"users",
