@@ -15,72 +15,71 @@
                     <% } %>
                 </ul>
                 <% } %>
-             <form action="/users/registro" method="POST" enctype="multipart/form-data">
+             <form class="formulario"  action="/users/registro" method="POST" enctype="multipart/form-data">
                 <ul class="lista-crear">
-                    <li><input required type="text" name="name" id="name" placeholder="Nombre"></li>
+
+                    <div class="form-control">                
+                        <li><input required type="text" name="name" id="name" placeholder="Nombre"></li>
+                    </div>
                     <br>
-                    <li><input required type="text" name="last_name" placeholder="Apellido"></li>
+                        <li><input required type="text" name="last_name" placeholder="Apellido"></li>
                     <br>
-                    <li><input required type="email" name="email" placeholder="e-mail"></li>
+                    <div class="form-control">
+                        <li><input required type="email" name="email" placeholder="e-mail"></li>
+                    </div>
                     <br>
-                    <li><input required type="password" name="pass" placeholder="Elegí tu contraseña"></li>
+                    <div class="form-control">
+                        <li><input required type="password" name="pass" placeholder="Elegí tu contraseña"></li>
+                    </div>
                     <br>
-                    <li><input type="file" name="image" placeholder="Imagen de usuario"></li>
+                    <div class="form-control">
+                        <li><input type="file" name="image" placeholder="Imagen de usuario"></li>
+                    </div>
                     <br>
-                    <li><input type="submit" value="Enviar">
-                    <input type="reset" value="Borrar"></li> 
+                    <div class="form-control">
+                        <li><input type="submit" value="Enviar">
+                        <input type="reset" value="Borrar"></li>
+                    </div> 
                     <br>
+
                 </ul> 
-            
-            <!-- <div class="container">
-                <form id="formularioValidado" class="form">
-                    <div class="form-control ">
-                        <label for="username">Nombre</label>
-                        <input type="text" placeholder="Nombre" id="nombreFormulario" />
-                        <i class="fas fa-check-circle"></i>
-                        <i class="fas fa-exclamation-circle"></i>
-                        <small>Error en el nombre</small>
-                    </div>
-                    <div class="form-control ">
-                        <label for="Apellido">Apellido</label>
-                        <input type="text" placeholder="Apellido" id="apellidoFormulario"/>
-                        <i class="fas fa-check-circle"></i>
-                        <i class="fas fa-exclamation-circle"></i>
-                        <small>Error en el apellido</small>
-                    </div>
-                    <div class="form-control">
-                        <label for="email">E-mail</label>
-                        <input type="email" placeholder="e-mail" id="emailFormulario" />
-                        <i class="fas fa-check-circle"></i>
-                        <i class="fas fa-exclamation-circle"></i>
-                        <small>Error en el mail</small>
-                    </div>
-                    <div class="form-control">
-                        <label for="password">Contraseña</label>
-                        <input type="password" placeholder="contraseña" id="passwordFormulario"/>
-                        <i class="fas fa-check-circle"></i>
-                        <i class="fas fa-exclamation-circle"></i>
-                        <small>Contraseña invalida</small>
-                    </div>
-                    <div class="form-control">
-                        <label for="password2">Checkear contraseña</label>
-                        <input type="password" placeholder="vuelve a ingresarla" id="password2"/>
-                        <i class="fas fa-check-circle"></i>
-                        <i class="fas fa-exclamation-circle"></i>
-                        <small>Las contraseñas no coinciden</small>
-                    </div> -->
-                    <!-- <div class="form-control">
-                        <label for="img">Subir Imagen de perfil</label>
-                        <input type="img" placeholder="Seleccione su imagen" id="img"/>
-                        <i class="fas fa-check-circle"></i>
-                        <i class="fas fa-exclamation-circle"></i>
-                        <small>Las contraseñas no coinciden</small>
-                    </div> -->
-                    <!-- <button type="submit">Submit</button>
-                    <input type="reset" value="Borrar">
-                </form>
-            </div> -->
         <br>
         <%- include('../partials/footer.ejs')%>
+        <script>
+            window.addEventListener('load', function(){
+                let formulario = document.querySelector('form.formulario');
+                formulario.addEventListener('submit',function(e){
+
+                    let campoName = document.querySelector('input.name');
+                    let campoLastName = document.querySelector('input.last_name');
+                    let campoEmail = document.querySelector('input.email');
+                    let campoImage = document.querySelector('input.image'); 
+
+                    e.preventDefault();
+
+                    if (campoName.value=="") {
+                        
+                    } else if(campoName.value=="") {
+                        
+                    }
+                    if (campoLastName.value=="") {
+                        
+                    } else if (campoLastName.value==""){
+                        
+                    }
+                    if (campoEmail.value=="") {
+                        
+                    } else if (campoEmail.value==""){
+                        
+                    }
+                    if (campoImage.value=="") {
+                        
+                    } else if(campoImage.value==""){
+                        
+                    }
+                });
+            })
+    
+        </script>
     </body>
 </html>

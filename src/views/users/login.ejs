@@ -14,7 +14,7 @@
                 </ul>
                 <% } %>
             <br>
-            <form action="/" method="POST">
+            <form class="formulario"  action="/" method="POST">
                 <input type="text" name="email" placeholder="Ingrese su e-mail">
                 <input type="password" name="password" placeholder="Contraseña">
                 <input class="enviar" type="submit" value="Enviar">
@@ -27,6 +27,14 @@
         </main>
         <br>
         <%- include('../partials/footer.ejs')%>
-
+        <script>
+            window.addEventListener('load', function(){
+                let formulario = document.querySelector('form.formulario');
+                formulario.addEventListener('submit',function(e){
+                    e.preventDefault();
+                });
+            })
+    
+        </script>
     </body>
 </html>

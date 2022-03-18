@@ -14,7 +14,7 @@
                     <% } %>
                 </ul>
                 <% } %>
-            <form action="/productos/<%= productos.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+            <form class="formulario" action="/productos/<%= productos.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
                 <ul class="lista-crear">
                     <li><input required value="<%= productos.nombre %>" type="text" name="name" placeholder="Nombre del producto"></li>   
                     <br>
@@ -44,5 +44,14 @@
         </div>
     </div>
     <%- include('../partials/footer.ejs')%>
+    <script>
+        window.addEventListener('load', function(){
+            let formulario = document.querySelector('form.formulario');
+            formulario.addEventListener('submit',function(e){
+                e.preventDefault();
+            });
+        })
+
+    </script>
 </body>
 </html>

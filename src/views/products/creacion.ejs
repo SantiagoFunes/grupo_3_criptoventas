@@ -16,26 +16,58 @@
                 <% } %>
             <br>
 
-            <form action="/productos" method="POST" enctype="multipart/form-data">
+            <form  id="form" class="formulario"  action="/productos" method="POST" enctype="multipart/form-data">
             <ul class="lista-crear">
-                <li><input required type="text" name="nombre" placeholder="Nombre del producto"></li>   
+                <div class="form-control" >
+                    <li><input class="nombre" type="text" name="nombre" placeholder="Nombre del producto"></li>   
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>Error en el nombre</small>
+                </div>
                 <br>
-                <li><input required type="text" name="descripcion" placeholder="Descripcion"></li>      
+                <div class="form-control">
+                    <li><input  class="descripcion" type="text" name="descripcion" placeholder="Descripcion"></li>      
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>Error en la descripcion</small>
+                </div>
                 <br>
-                <li><input required type="text" name="marca" placeholder="Marca"></li>  
-                <br> 
-                <li><input required type="text" name="modelo" placeholder="Modelo"></li>  
-                <br> 
-                <li><input required type="text" name="precio" placeholder="Precio"></li>   
+                <div class="form-control">
+                    <li><input  class="marca" type="text" name="marca" placeholder="Marca"></li>  
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>Error en la marca</small>
+                </div>
                 <br>
-                <li><select required name="clase">
+                <div class="form-control"> 
+                    <li><input  class="modelo" type="text" name="modelo" placeholder="Modelo"></li>  
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>Error en el modelo</small>
+                </div>
+                <br>
+                <div class="form-control"> 
+                    <li><input  class="precio" type="text" name="precio" placeholder="Precio"></li>   
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>Error en el precio</small>
+                </div>
+                <br>
+                <div class="form-control">
+                    <li><select class="clase" name="clase">
+                     <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>Error en la clase</small>
+                    </div>
                     <option value="" disabled selected hidden>Seleccione Clase</option>
                     <% for (let clase of clases) {%>
                     <option value="<%= clase.id %>"><%= clase.nombre %> </option>
                     <% } %>
                 </select></li>
                 <br>
-                <li ><input type="file" multiple name="image"></li>
+                <div class="form-control">
+                     <li ><input class="image" type="file" multiple name="image"></li>
+                </div>
                 <br>
                 <hr style="color: white; border-top:1px ; margin-bottom: 1px ;">
                 <li><input type="submit" value="Crear">  <input type="reset" value="Borrar"></li>
@@ -44,5 +76,36 @@
         </div>
     </div>
     <%- include('../partials/footer.ejs')%>
+    <script>
+        window.addEventListener('load', function(){
+            let formulario = document.querySelector('form.formulario');
+            formulario.addEventListener('submit',function(e){
+                let campoNombre = document.querySelector('input.nombre');
+                let campoDescripcion = document.querySelector('input.descripcion');
+                let campoImage = document.querySelector('input.image');
+
+                // const validationExtensionImage = ['jpeg','jpg','png','gif'].includes(image.filename.toLowerCase().split('.')[1])
+
+
+                if (campoNombre.value=="") {
+                    e.preventDefault();
+                    alert("el campo nombre tiene que estar completo")
+                } else if(campoNombre.value.length < 5){
+                    e.preventDefault();
+                    alert("el campo nombre debe ser mayor a 5")
+                }
+                if (campoDescripcion.value =="") {
+                    e.preventDefault();
+                    alert("el campo descripcion tiene que estar completo")
+                } else if(campoDescripcion.value.length < 20){
+                    e.preventDefault();
+                    alert("el campo descripcion debe ser mayor a 20")
+                }
+                console.log(campoImage);
+                
+            });
+        })
+        
+    </script>
 </body>
 </html>
