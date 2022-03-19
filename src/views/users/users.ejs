@@ -10,6 +10,7 @@
 
 <body>
     <%- include('../partials/head.ejs')%>
+<<<<<<< HEAD
         <%- include('../partials/header.ejs')%>
 
             <main class="login">
@@ -84,6 +85,64 @@
                     });
                 </script>
 
+=======
+    <%- include('../partials/header.ejs')%>
+    
+    <main class="login">
+        <h1>Log in</h1>
+        <% if (typeof errors != "undefined"){ %>
+            <p style="color: red;">ERROR!!</p>
+            <ul>
+                <% for (let i = 0; i < errors.length; i++){ %>
+                <li><%= errors[i].msg %></li>
+                <% } %>
+            </ul>
+            <% } %>
+        <br>
+        <form class="formulario" action="/users/login" method="POST">
+            <input class="email" type="email" name="email" placeholder="Ingrese su e-mail">
+            <input class="pass" type="password" name="password" placeholder="Contraseña">
+            <input class="enviar" type="submit" value="Enviar">
+        </form>
+          <br>
+          <hr>
+          
+        <p>¿No tienes cuenta? -<a href="/users/register">Registrate</a></p>
+        <br>
+    </main>
+    <br>
+
+    <%- include('../partials/footer.ejs')%>
+    <script>
+
+        window.addEventListener("load", function () {
+            let formulario = document.querySelector('form.formulario');
+
+            formulario.addEventListener("submit", function (e) {
+                let campoEmail = document.querySelector('input.email');
+                let campoPassword = document.querySelector('input.pass');
+                function isEmail(campoEmail) {
+                        return  (/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(campoEmail))
+
+                    }
+
+                e.preventDefault();
+
+                if (campoEmail.value == "") {
+                    e.preventDefault();
+                    alert("el campo de email debe estar completo")
+                } else if (!isEmail(campoEmail.value)) {
+                    e.preventDefault();
+                    alert("No es un email")
+                }
+                if (campoPassword.value == '') {
+                    e.preventDefault()
+                    alert("Debe ingresar una contraseña")
+                }
+            })
+        });
+    </script>
+>>>>>>> 1edafe3ab83683825f5affe3d10ec6c4c0410903
 </body>
 
 </html>

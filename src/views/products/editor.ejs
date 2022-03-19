@@ -3,62 +3,57 @@
 
 <body>
     <%- include('../partials/head.ejs')%>
-        <%- include('../partials/header.ejs')%>
-            <div class="editor-creador">
-                <div class="editor">
-                    <h2>Editar un producto</h2>
-                    <% if (typeof errors !="undefined" ){ %>
-                        <p style="color: red;">ERROR!!</p>
-                        <ul>
-                            <% for (let i=0; i < errors.length; i++){ %>
-                                <li>
-                                    <%= errors[i].msg %>
-                                </li>
-                                <% } %>
-                        </ul>
+    <%- include('../partials/header.ejs')%>
+    <div class="editor-creador">
+        <div class="editor">
+            <h2>Editar un producto</h2>
+            <% if (typeof errors != "undefined"){ %>
+                <p style="color: red;">ERROR!!</p>
+                <ul>
+                    <% for (let i = 0; i < errors.length; i++){ %>
+                    <li><%= errors[i].msg %></li>
+                    <% } %>
+                </ul>
+                <% } %>
+            <form class="formulario" action="/productos/<%= productos.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+                <ul class="lista-crear">
+                    <li><input required value="<%= productos.nombre %>" type="text" name="name" placeholder="Nombre del producto"></li>   
+                    <br>
+                    <li><input required value="<%= productos.descripcion %>" type="text" name="description" placeholder="Descripcion"></li>      
+                    <br>
+                    <li><input required value="<%= productos.marca %>" type="text" name="brand" placeholder="Marca"></li>  
+                    <br> 
+                    <li><input required value="<%= productos.modelo %>" type="text" name="modelo" placeholder="Modelo"></li>  
+                    <br> 
+                    <li><select required name="model">
+                        <option value="" disabled selected hidden>Seleccione Clase</option>
+                        <% for (let i = 0 ; i < clases.length; i++) {%>
+                        <option value="<%= clases[i].id %>"<%= productos.clase_id == clases[i].id ? "selected" : ""%>><%= clases[i].nombre %> </option>
                         <% } %>
-                            <form action="/productos/<%= productos.id %>?_method=PUT" method="POST"
-                                enctype="multipart/form-data">
-                                <ul class="lista-crear">
-                                    <li><input required value="<%= productos.nombre %>" type="text" name="name"
-                                            placeholder="Nombre del producto"></li>
-                                    <br>
-                                    <li><input required value="<%= productos.descripcion %>" type="text"
-                                            name="description" placeholder="Descripcion"></li>
-                                    <br>
-                                    <li><input required value="<%= productos.marca %>" type="text" name="brand"
-                                            placeholder="Marca"></li>
-                                    <br>
-                                    <li><input required value="<%= productos.modelo %>" type="text" name="modelo"
-                                            placeholder="Modelo"></li>
-                                    <br>
-                                    <li><select required name="model">
-                                            <option value="" disabled selected hidden>Seleccione Clase</option>
-                                            <% for (let i=0 ; i < clases.length; i++) {%>
-                                                <option value="<%= clases[i].id %>" <%=productos.clase_id==clases[i].id
-                                                    ? "selected" : "" %>><%= clases[i].nombre %>
-                                                </option>
-                                                <% } %>
-                                        </select></li>
-                                    <br>
-                                    <li><input required value="<%= productos.precio %>" type="text" name="price"
-                                            placeholder="Precio"></li>
-                                    <br>
-                                    <img class="imagen-producto"
-                                        src="/images/<%= productos.imagenes_producto[0].nombre_imagen %>"
-                                        alt="Imagen del producto actual">
-                                    <li><input type="file" name="image"></li>
-                                    <br>
-                                    <hr style="color: white; border-top:1px ; margin-bottom: 1px ;">
-                                    <li><input type="submit" value="Guardar"></li>
-                                    <li><input type="reset" value="Restablecer campos"></li>
-                                </ul>
-                            </form>
-                </div>
-            </div>
-            <%- include('../partials/footer.ejs')%>
+                    </select></li> 
+                    <br> 
+                    <li><input required value="<%= productos.precio %>" type="text" name="price" placeholder="Precio"></li>   
+                    <br>
+                    <img class="imagen-producto" src="/images/<%= productos.imagenes_producto[0].nombre_imagen %>" alt="Imagen del producto actual">
+                    <li ><input type="file" name="image"></li>
+                    <br>
+                    <hr style="color: white; border-top:1px ; margin-bottom: 1px ;">
+                    <li><input type="submit" value="Guardar"></li>  
+                    <li><input type="reset" value="Restablecer campos"></li>
+                </ul>
+                </form>
+        </div>
+    </div>
+    <%- include('../partials/footer.ejs')%>
+    <script>
+        window.addEventListener('load', function(){
+            let formulario = document.querySelector('form.formulario');
+            formulario.addEventListener('submit',function(e){
+                e.preventDefault();
+            });
+        })
 
-
+    </script>
 </body>
 
 </html>
