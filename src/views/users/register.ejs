@@ -19,21 +19,21 @@
                 <ul class="lista-crear">
 
                     <div class="form-control">                
-                        <li><input required type="text" name="name" id="name" placeholder="Nombre"></li>
+                        <li><input class="name" type="text" name="name" id="name" placeholder="Nombre"></li>
                     </div>
                     <br>
-                        <li><input required type="text" name="last_name" placeholder="Apellido"></li>
+                        <li><input class="last_name" type="text" name="last_name" placeholder="Apellido"></li>
                     <br>
                     <div class="form-control">
-                        <li><input required type="email" name="email" placeholder="e-mail"></li>
-                    </div>
-                    <br>
-                    <div class="form-control">
-                        <li><input required type="password" name="pass" placeholder="Elegí tu contraseña"></li>
+                        <li><input class="email" type="email" name="email" placeholder="e-mail"></li>
                     </div>
                     <br>
                     <div class="form-control">
-                        <li><input type="file" name="image" placeholder="Imagen de usuario"></li>
+                        <li><input class="pass" type="password" name="pass" placeholder="Elegí tu contraseña"></li>
+                    </div>
+                    <br>
+                    <div class="form-control">
+                        <li><input class="image" type="file" name="image" placeholder="Imagen de usuario"></li>
                     </div>
                     <br>
                     <div class="form-control">
@@ -54,28 +54,67 @@
                     let campoLastName = document.querySelector('input.last_name');
                     let campoEmail = document.querySelector('input.email');
                     let campoImage = document.querySelector('input.image'); 
+                    let campoPass = document.querySelector('input.pass'); 
 
+                    // ##########FUNCIONES########
+
+                    function isEmail(campoEmail) {
+                        return  (/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(campoEmail))
+
+                    }   
+                    // function validarExtension(ruta) {
+                    //     var extensionesValidas = ".png, .gif, .jpeg, .jpg";
+                    //     // var ruta = campoImage;
+                    //     var extension = ruta.substring(ruta.lastIndexOf('.') + 1).toLowerCase();
+                    //     console.log(extension);
+                    //     var extensionValida = extensionesValidas.indexOf(extension);
+
+                    //     if(extensionValida < 0) {
+                    //             return false;
+                    //         } else {
+                    //             return true;
+                    //     }
+                    // }
+                    function validarImagen(obj){
+                     var uploadFile = obj.files[0];
+                    if (!(/\.(jpg|png|gif)$/i).test(uploadFile.name)) {
+                    alert('El archivo a adjuntar no es valido'); 
+                    }}
                     e.preventDefault();
 
-                    if (campoName.value=="") {
-                        
-                    } else if(campoName.value=="") {
-                        
-                    }
+                     if (campoName.value=="") {
+                         e.preventDefault();
+                         alert("El campo de nombre debe estar completo")
+                     } else if(campoName.value.length < 2) {
+                         e.preventDefault();
+                         alert("El campo nombre debe tener mas de 2 caracteres")
+                     }
                     if (campoLastName.value=="") {
-                        
-                    } else if (campoLastName.value==""){
-                        
+                        e.preventDefault();
+                        alert("El campo de apellido debe estar completo")   
+                    } else if (campoLastName.value.length < 2){
+                        e.preventDefault();
+                        alert("El campo apellido debe tener mas de 2 caracteres")
                     }
                     if (campoEmail.value=="") {
-                        
-                    } else if (campoEmail.value==""){
-                        
+                        e.preventDefault();
+                        alert("El campo de email debe estar completo")
+                    } else if (!isEmail(campoEmail.value)){
+                        e.preventDefault();
+                        alert("No es un email")
                     }
+                    if (campoPass.value=="") {
+                         e.preventDefault();
+                         alert("Tienes que ingresar una contraseña")
+                     } else if(campoPass.value.length < 8) {
+                         e.preventDefault();
+                         alert("La contraseña debe tener mas de 8 caracteres")
+                     }
                     if (campoImage.value=="") {
-                        
-                    } else if(campoImage.value==""){
-                        
+                        e.preventDefault();
+                        alert("Debes elegir una imagen")
+                    } else if(validarImagen(campoImage)){
+                        e.preventDefault();   
                     }
                 });
             })
