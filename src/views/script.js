@@ -54,4 +54,4 @@ function checkInputs() {
 	} else{
 		setSuccessFor(password2);
 	}
-}
+};

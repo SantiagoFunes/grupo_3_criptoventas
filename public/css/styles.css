@@ -775,11 +775,11 @@ background-color: rgb(210, 51, 30);
 	text-decoration: none;
 }
 
-
-
-
-
-
+section ul {
+	font-weight: bold;
+	list-style: none;
+	color : red;
+}
 
 
 
