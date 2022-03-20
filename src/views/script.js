@@ -99,6 +99,17 @@ alert("hola soy un mensaje");
 // // 	formControl.className = 'form-control success';
 // // }
 	
+<<<<<<< HEAD
+	if(password2Value === '') {
+		setErrorFor(password2, 'Este campo no puede estar vacio');
+	} else if(passwordValue !== password2Value) {
+		setErrorFor(password2, 'Las contraseñas no coinciden');
+	} else{
+		setSuccessFor(password2);
+	}
+};
+=======
 // // function isEmail(email) {
 // // 	return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
 // // }
+>>>>>>> 1edafe3ab83683825f5affe3d10ec6c4c0410903

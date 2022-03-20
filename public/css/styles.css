@@ -705,11 +705,11 @@ background-color: rgb(210, 51, 30);
 
 
 
-
-
-
-
-
+section ul {
+	font-weight: bold;
+	list-style: none;
+	color : red;
+}
 
 
 

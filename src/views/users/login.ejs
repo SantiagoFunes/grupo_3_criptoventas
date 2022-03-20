@@ -1,60 +1,79 @@
 <!DOCTYPE html>
 <html>
-    <body>
-        <%- include('../partials/head.ejs')%>
-        <%- include('../partials/header.ejs')%>
-        <main class="login">
-            <h1>Formulario de Log in</h1>
-            <% if (typeof validaciones != "undefined"){ %>
-                <p style="color: red;">ERROR!!</p>
-                <ul>
-                    <% for (let i = 0; i < validaciones.length; i++){ %>
-                    <li><%= validaciones[i].msg %></li>
-                    <% } %>
-                </ul>
-                <% } %>
-            <br>
-            <form class="formulario"  action="/" method="POST">
-                <input type="email" name="email" placeholder="Ingrese su e-mail">
-                <input type="password" name="password" placeholder="Contraseña">
-                <input type="submit" value="Enviar">
-            </form>
-              <br>
-              <hr>
-              
-            <p>¿No tienes cuenta? -<a href="/register">Registrate</a></p>
-            <br>
-        </main>
-        <br>
-        <%- include('../partials/footer.ejs')%>
-        <script>
 
-            window.addEventListener("load", function () {
-                let formulario = document.querySelector('form.formulario');
-                
-                formulario.addEventListener("submit", function (e) {
-                    
-                    let campoEmail = document.querySelector('input.email');
-                    let campoPassword = document.querySelector('input.password');
-                    function isEmail(campoEmail) {
-                        return (/^(([^<>()[].,;:\s@"]+(.[^<>()[].,;:\s@"]+)*)|(".+"))@(([[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}])|(([a-zA-Z-0-9]+.)+[a-zA-Z]{2,}))$/.test(campoEmail))
-                    }
-    
-                    
-    
-                    if (campoEmail.value == "") {
-                        e.preventDefault();
-                        alert("el campo de email debe estar completo")
-                    } else if (!isEmail(campoEmail)) {
-                        e.preventDefault();
-                        alert("No es un email")
-                    }
-                    if (campoPassword == '') {
-                        e.preventDefault()
-                        alert("Debe ingresar una contraseña")
-                    }
-                })
-            });
-        </script>
-    </body>
+<body>
+    <%- include('../partials/head.ejs')%>
+        <%- include('../partials/header.ejs')%>
+            <main class="login">
+                <h1>Formulario de Log in</h1>
+                <% if (typeof validaciones !="undefined" ){ %>
+                    <p style="color: red;">ERROR!!</p>
+                    <ul>
+                        <% for (let i=0; i < validaciones.length; i++){ %>
+                            <li>
+                                <%= validaciones[i].msg %>
+                            </li>
+                            <% } %>
+                    </ul>
+                    <% } %>
+                        <br>
+                        <section class="errores">
+                            <ul>
+                            
+                            </ul>
+                            </section>
+                        <form class="formulario" action="/" method="POST">
+                            <input class='email' required type="text" name="email" placeholder="Ingrese su e-mail">
+                            <input class="pass" required type="password" name="password" placeholder="Contraseña">
+                            <input class="enviar" type="submit" value="Enviar">
+                        </form>
+                        <br>
+                        <hr>
+
+                        <p>¿No tienes cuenta? -<a href="/register">Registrate</a></p>
+                        <br>
+            </main>
+            <br>
+            <%- include('../partials/footer.ejs')%>
+
+            <script>
+
+                window.addEventListener("load", function () {
+                    let formulario = document.querySelector('form.formulario');
+
+                    formulario.addEventListener("submit", function (e) {
+                        let campoEmail = document.querySelector('input.email');
+                        let campoPassword = document.querySelector('input.pass');
+                        function isEmail(campoEmail) {
+                            return (/^(([^<>()[]\.,;:\s@"]+(.[^<>()[]\.,;:\s@"]+)*)|(".+"))@(([[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}])|(([a-zA-Z-0-9]+.)+[a-zA-Z]{2,}))$/.test(campoEmail))
+                        }
+
+                        //e.preventDefault();
+                        let errores = [];
+
+                        if (campoEmail.value == "") {
+                            e.preventDefault();
+                            errores.push("El campo de email debe estar completo")
+                        } else if (isEmail(campoEmail.value)) {
+                            e.preventDefault();
+                            errores.push("No es un email")
+                        }
+                        if (campoPassword.value == '') {
+                            e.preventDefault()
+                            errores.push("Debes ingresar una contraseña")
+                        }
+
+                        if (errores.length > 0) {
+                            e.preventDefault();
+                        let ulErrores = document.querySelector(".errores ul");
+                            errores.forEach(error => {
+                                ulErrores.innerHTML += `<li>${error}</li>`
+                            });
+                        }
+                    })
+                });
+            </script>
+
+</body>
+
 </html>
