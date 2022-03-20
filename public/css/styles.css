@@ -667,27 +667,6 @@ background-color: rgb(210, 51, 30);
 	width: 50%;
 }
 
-  /* .form-control {
-	margin-bottom: 10px;
-	padding-bottom: 20px;
-	position: relative;
-}  */
-
-/* .form-control label {
-	display: inline-block;
-	margin-bottom: 5px;
-} */
-
- /* .form-control input {
-	border: 2px solid #f0f0f0;
-	border-radius: 4px;
-	display: block;
-	font-family: inherit;
-	font-size: 14px;
-	padding: 10px;
-	width: 100%;
-}   */
-
 .form-control input:focus {
 	outline: 0;
 	border-color: #777;
@@ -703,9 +682,6 @@ background-color: rgb(210, 51, 30);
 
 .form-control i {
 	visibility: hidden;
-	 /* position: absolute; 
-	top: 40px;
-	right: 10px;  */
 }
 
 .form-control.success i.fa-check-circle {
@@ -720,9 +696,6 @@ background-color: rgb(210, 51, 30);
 
 .form-control small {
 	color: #e74c3c;
-	/* position: absolute; */
-	/* bottom: 0;
-	left: 0;  */
 	visibility: hidden;
 }
 

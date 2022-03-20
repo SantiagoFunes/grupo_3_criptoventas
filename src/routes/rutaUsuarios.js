@@ -41,16 +41,7 @@ router.post("/registro", upload.single("image"),
         body('pass','La contraseña debe tener mas de 8 caracteres')
         .exists()
         .isLength({min:8}),
-      ],(req,res)=>{
-        const errors = validationResult(req);
-        if (!errors.isEmpty()) {
-            
-            const valores = req.body
-            const validaciones = errors.array()
-
-            res.render('users/register',{validaciones:validaciones})
-        }
-      },
+      ],
 
     usuariosController.nuevoUsuario);
 

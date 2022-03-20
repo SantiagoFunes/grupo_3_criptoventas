@@ -19,42 +19,42 @@
             <form  id="form" class="formulario"  action="/productos" method="POST" enctype="multipart/form-data">
             <ul class="lista-crear">
                 <div class="form-control" >
-                    <li><input class="nombre" type="text" name="nombre" placeholder="Nombre del producto"></li>   
+                   <input class="nombre" type="text" name="nombre" placeholder="Nombre del producto"> 
                     <i class="fas fa-check-circle"></i>
                     <i class="fas fa-exclamation-circle"></i>
                     <small>Error en el nombre</small>
                 </div>
                 <br>
                 <div class="form-control">
-                    <li><input  class="descripcion" type="text" name="descripcion" placeholder="Descripcion"></li>      
+                    <input  class="descripcion" type="text" name="descripcion" placeholder="Descripcion">      
                     <i class="fas fa-check-circle"></i>
                     <i class="fas fa-exclamation-circle"></i>
                     <small>Error en la descripcion</small>
                 </div>
                 <br>
                 <div class="form-control">
-                    <li><input  class="marca" type="text" name="marca" placeholder="Marca"></li>  
+                    <input  class="marca" type="text" name="marca" placeholder="Marca">  
                     <i class="fas fa-check-circle"></i>
                     <i class="fas fa-exclamation-circle"></i>
                     <small>Error en la marca</small>
                 </div>
                 <br>
-                <div class="form-control"> 
-                    <li><input  class="modelo" type="text" name="modelo" placeholder="Modelo"></li>  
+                <div class="form-control "> 
+                    <input  class="modelo" type="text" name="modelo" placeholder="Modelo">  
                     <i class="fas fa-check-circle"></i>
                     <i class="fas fa-exclamation-circle"></i>
                     <small>Error en el modelo</small>
                 </div>
                 <br>
                 <div class="form-control"> 
-                    <li><input  class="precio" type="text" name="precio" placeholder="Precio"></li>   
+                    <input  class="precio" type="text" name="precio" placeholder="Precio">   
                     <i class="fas fa-check-circle"></i>
                     <i class="fas fa-exclamation-circle"></i>
                     <small>Error en el precio</small>
                 </div>
                 <br>
                 <div class="form-control">
-                    <li><select class="clase" name="clase">
+                    <select class="clase" name="clase">
                      <i class="fas fa-check-circle"></i>
                     <i class="fas fa-exclamation-circle"></i>
                     <small>Error en la clase</small>
@@ -63,20 +63,23 @@
                     <% for (let clase of clases) {%>
                     <option value="<%= clase.id %>"><%= clase.nombre %> </option>
                     <% } %>
-                </select></li>
+                </select>
                 <br>
                 <div class="form-control">
-                     <li ><input class="image" type="file" multiple name="image"></li>
+                    <input class="image" type="file" multiple name="image">
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>Error en el precio</small>
                 </div>
                 <br>
                 <hr style="color: white; border-top:1px ; margin-bottom: 1px ;">
-                <li><input type="submit" value="Crear">  <input type="reset" value="Borrar"></li>
+                <input type="submit" value="Crear">  <input type="reset" value="Borrar">
             </ul>
             </form>
         </div>
     </div>
     <%- include('../partials/footer.ejs')%>
-    <script>
+     <script>
         window.addEventListener('load', function(){
             let formulario = document.querySelector('form.formulario');
             formulario.addEventListener('submit',function(e){
@@ -85,28 +88,65 @@
                 let campoDescripcion = document.querySelector('input.descripcion');
                 let campoImage = document.querySelector('input.image');
 
-                // const validationExtensionImage = ['jpeg','jpg','png','gif'].includes(image.filename.toLowerCase().split('.')[1])
+                // FUNCIONES PARA VALIDAR
+
+                function setErrorFor(input,mensaje) {
+                     	const formControl = input.parentElement;
+                     	const small = formControl.querySelector('small');
+                     	formControl.className = 'form-control error';
+                     	small.innerText = mensaje;
+                     }
+
+                function setSuccessFor(input) {
+                     	const formControl = input.parentElement;
+                     	formControl.className = 'form-control success';
+                     }
+                function validarImagen(obj){
+                     var uploadFile = obj.files[0];
+                    if (!(/\.(jpg|png|gif)$/i).test(uploadFile.name)) {
+                        return true
+                    }else{ return false}
+                }
+                
+                    // VALIDACIONES 
 
 
+                    // NOMBRE
                 if (campoNombre.value=="") {
                     e.preventDefault();
-                    alert("el campo nombre tiene que estar completo")
+                    setErrorFor(campoNombre,"Debes ingresar un nombre")
                 } else if(campoNombre.value.length < 5){
                     e.preventDefault();
-                    alert("el campo nombre debe ser mayor a 5")
+                    setErrorFor(campoNombre, "El nombre debe tener mas de 5 caracteres")
+                }else{
+                    setSuccessFor(campoNombre)
                 }
+
+                    // DESCRIPCION
                 if (campoDescripcion.value =="") {
                     e.preventDefault();
-                    alert("el campo descripcion tiene que estar completo")
+                    setErrorFor(campoDescripcion,"Debes ingresar una descripcion")
                 } else if(campoDescripcion.value.length < 20){
                     e.preventDefault();
-                    alert("el campo descripcion debe ser mayor a 20")
+                    setErrorFor(campoDescripcion,"La descripcion debe tener al menos 20 caracteres")
+                }else{
+                    setSuccessFor(campoDescripcion)
                 }
-                console.log(campoImage);
+
+                    // IMAGEN
+                if (campoImage.value=="") {
+                        e.preventDefault();
+                        setErrorFor(campoImage,"Debes elegir una imagen")
+                } else if(validarImagen(campoImage)){
+                        e.preventDefault();
+                        setErrorFor(campoImage,"Formato incorrecto de imagen")
+                }else{
+                        setSuccessFor(campoImage)
+                    }
                 
             });
         })
         
-    </script>
+    </script> 
 </body>
 </html>

@@ -33,14 +33,14 @@
                 let formulario = document.querySelector('form.formulario');
                 
                 formulario.addEventListener("submit", function (e) {
-                    e.preventDefault()
+                    
                     let campoEmail = document.querySelector('input.email');
                     let campoPassword = document.querySelector('input.password');
                     function isEmail(campoEmail) {
                         return (/^(([^<>()[].,;:\s@"]+(.[^<>()[].,;:\s@"]+)*)|(".+"))@(([[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}])|(([a-zA-Z-0-9]+.)+[a-zA-Z]{2,}))$/.test(campoEmail))
                     }
     
-                    e.preventDefault();
+                    
     
                     if (campoEmail.value == "") {
                         e.preventDefault();
