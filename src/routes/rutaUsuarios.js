@@ -47,10 +47,10 @@ router.post("/registro", upload.single("image"),
 
 router.get("/logout",authMiddleware,usuariosController.logout)
 router.post("/login"
- ,[
-    body("email").isEmail().withMessage("Credenciales invalidas"),
+//  ,[
+//     body("email").isEmail().withMessage("Credenciales invalidas"),
 
- ] 
+//  ] 
 ,usuariosController.processLogin);
 router.get("/check", function(req,res){
     res.send("el usuario logueado es" + req.session.usuarioLogueado.first_name)

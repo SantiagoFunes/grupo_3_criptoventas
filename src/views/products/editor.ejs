@@ -17,25 +17,60 @@
                 <% } %>
             <form class="formulario" action="/productos/<%= productos.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
                 <ul class="lista-crear">
-                    <li><input required value="<%= productos.nombre %>" type="text" name="name" placeholder="Nombre del producto"></li>   
+                    <div class="form-control" >
+                    <input class="nombre" value="<%= productos.nombre %>" type="text" name="name" placeholder="Nombre del producto"> 
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>Error en el nombre</small>
+                </div> 
                     <br>
-                    <li><input required value="<%= productos.descripcion %>" type="text" name="description" placeholder="Descripcion"></li>      
+                    <div class="form-control" >
+                    <input value="<%= productos.descripcion %>" type="text" class="descripcion" name="description" placeholder="Descripcion">    
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>Error en el nombre</small>
+                </div>    
                     <br>
-                    <li><input required value="<%= productos.marca %>" type="text" name="brand" placeholder="Marca"></li>  
+                    <div class="form-control" >
+                    <input value="<%= productos.marca %>" type="text" name="brand" placeholder="Marca">  
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>Error en el nombre</small>
+                </div>
                     <br> 
-                    <li><input required value="<%= productos.modelo %>" type="text" name="modelo" placeholder="Modelo"></li>  
+                    <div class="form-control" >
+                    <input value="<%= productos.modelo %>" type="text" name="modelo" placeholder="Modelo">
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>Error en el nombre</small>
+                </div>  
                     <br> 
-                    <li><select required name="model">
+                    <div class="form-control" >
+                    <select name="model">
                         <option value="" disabled selected hidden>Seleccione Clase</option>
                         <% for (let i = 0 ; i < clases.length; i++) {%>
                         <option value="<%= clases[i].id %>"<%= productos.clase_id == clases[i].id ? "selected" : ""%>><%= clases[i].nombre %> </option>
                         <% } %>
-                    </select></li> 
+                    </select> 
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>Error en el nombre</small>
+                </div>
                     <br> 
-                    <li><input required value="<%= productos.precio %>" type="text" name="price" placeholder="Precio"></li>   
+                    <div class="form-control" >
+                    <input value="<%= productos.precio %>" type="text" name="price" placeholder="Precio">   
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>Error en el nombre</small>
+                </div>
                     <br>
+                    <div class="form-control" >
                     <img class="imagen-producto" src="/images/<%= productos.imagenes_producto[0].nombre_imagen %>" alt="Imagen del producto actual">
-                    <li ><input type="file" name="image"></li>
+                    <li ><input type="file"  class="image" name="image">
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>Error en el nombre</small>
+                </div>
                     <br>
                     <hr style="color: white; border-top:1px ; margin-bottom: 1px ;">
                     <li><input type="submit" value="Guardar"></li>  
@@ -49,10 +84,67 @@
         window.addEventListener('load', function(){
             let formulario = document.querySelector('form.formulario');
             formulario.addEventListener('submit',function(e){
-                e.preventDefault();
+                
+                let campoNombre = document.querySelector('input.nombre');
+                let campoDescripcion = document.querySelector('input.descripcion');
+                let campoImage = document.querySelector('input.image');
+
+                // FUNCIONES PARA VALIDAR
+
+                function setErrorFor(input,mensaje) {
+                     	const formControl = input.parentElement;
+                     	const small = formControl.querySelector('small');
+                     	formControl.className = 'form-control error';
+                     	small.innerText = mensaje;
+                     }
+
+                function setSuccessFor(input) {
+                     	const formControl = input.parentElement;
+                     	formControl.className = 'form-control success';
+                     }
+                function validarImagen(obj){
+                     var uploadFile = obj.files[0];
+                    if (!(/\.(jpg|png|gif)$/i).test(uploadFile.name)) {
+                        return true
+                    }else{ return false}
+                }
+                
+                    // VALIDACIONES 
+
+
+                    // NOMBRE
+                if (campoNombre.value=="") {
+                    e.preventDefault();
+                    setErrorFor(campoNombre,"Debes ingresar un nombre")
+                } else if(campoNombre.value.length < 5){
+                    e.preventDefault();
+                    setErrorFor(campoNombre, "El nombre debe tener mas de 5 caracteres")
+                }else{
+                    setSuccessFor(campoNombre)
+                }
+
+                    // DESCRIPCION
+                if (campoDescripcion.value =="") {
+                    e.preventDefault();
+                    setErrorFor(campoDescripcion,"Debes ingresar una descripcion")
+                } else if(campoDescripcion.value.length < 20){
+                    e.preventDefault();
+                    setErrorFor(campoDescripcion,"La descripcion debe tener al menos 20 caracteres")
+                }else{
+                    setSuccessFor(campoDescripcion)
+                }
+
+                    // IMAGEN
+                 if(validarImagen(campoImage)){
+                        e.preventDefault();
+                        setErrorFor(campoImage,"Formato incorrecto de imagen")
+                }else{
+                        setSuccessFor(campoImage)
+                    }
+                
             });
         })
-
+        
     </script>
 </body>
 

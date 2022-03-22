@@ -71,7 +71,6 @@ const usuariosController={
             const errors= validationResult(req)
             if (errors.isEmpty()){
                 const user = await Usuario.findOne({where: {email:req.body.email}})
-            
                 if (user != undefined) {
                     if (bcrypt.compareSync(req.body.password, user.contraseña)) {
                         var usuarioaLoguearse = user;

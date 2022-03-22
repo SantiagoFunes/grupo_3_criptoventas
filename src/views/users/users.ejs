@@ -57,7 +57,7 @@
             <%- include('../partials/footer.ejs')%>
 
 
-                <script>
+                 <script>
                     //validacion formulario
                     //corregir que la lista no se sumen
                     //validar cuando la pss es incorrecta
@@ -89,16 +89,22 @@
                             if (campoPass.value == "") {
                                 e.preventDefault();
                                 setErrorFor(campoPass, "Tienes que ingresar una contraseña")
-                            } else if (campoPass.value.length < 3) {
-                                e.preventDefault();
-                                setErrorFor(campoPass, "La contraseña debe tener mas de 3 caracteres")
                             } else {
                                 setSuccessFor(campoPass)
+                            }
+                            if (campoEmail.value=="") {
+                                e.preventDefault();
+                                setErrorFor(campoEmail,"Debes ingresar un email")
+                            } else if (!isEmail(campoEmail.value)){
+                                e.preventDefault();
+                                setErrorFor(campoEmail,"Email invalido")
+                            }else{
+                                setSuccessFor(campoEmail)
                             }
                         }
                         )
                     });
-                </script>
+                </script> 
 </body>
 
 </html>
