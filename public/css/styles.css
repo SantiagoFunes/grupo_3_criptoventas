@@ -662,6 +662,10 @@ background-color: rgb(210, 51, 30);
 /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 @import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,500&display=swap');
+.form-control{
+	background: local;
+	border: none;
+}
 .form {
 	padding: 30px 40px;	
 	width: 50%;
