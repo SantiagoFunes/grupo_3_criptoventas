@@ -37,13 +37,29 @@
             
             <% for(let product of productos){ %>
             <a href="/productos/detalle/<%= product.id %>"><article class="homearticulo-producto">
-                <img class="home-producto" src="/images/<%= product.imagenes_producto[0].nombre_imagen %>" alt="Producto">
+
+
+                <div class="card" style="width: 18rem;">
+                    <img src="/images/<%= product.imagenes_producto[0].nombre_imagen %>" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title"><%= product.nombre %></h5>
+                      <p class="card-text"><%= product.descripcion %></p>
+                      <a href="#" class="btn btn-primary">Detalle</a>
+                    </div>
+                </div>
+
+
+                <!-- <img class="home-producto" src="/images/<%= product.imagenes_producto[0].nombre_imagen %>" alt="Producto">
                 <div class="home-descripcion">
                     <p class="nombre"><%= product.nombre %></p>
                     <p class="descripcion"><%= product.descripcion %></p>
                     <p class="precio"><%= product.imagen %></p>
                     <p class="envio">Envio gratis</p>
-                </div>
+                </div> -->
+
+
+
+                
             </article></a>
             <% } %>
         </section>
