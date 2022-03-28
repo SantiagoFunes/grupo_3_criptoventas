@@ -25,10 +25,11 @@ const publicpath = path.resolve(__dirname,'../public');
 app.use(express.static(publicpath))
 // ************ Route System require and use() ************
 let rutasHome = require("./routes/rutaHome.js");
-let rutasCarrito = require("./routes/rutaCarrito.js");
+// let rutasCarrito = require("./routes/rutaCarrito.js");
 let rutasLogin = require("./routes/rutaLogin.js");
-let rutasRegister = require("./routes/rutaRegister.js");
+// let rutasRegister = require("./routes/rutaRegister.js");
 let rutasProductos = require("./routes/rutaProductos.js");
+let rutasApi = require("./routes/rutaApi.js");
 let rutasUsuarios = require("./routes/rutaUsuarios.js");
 const router = require("./routes/rutaUsuarios.js");
 
@@ -41,12 +42,12 @@ app.use(function (req, res, next) {
 
 // ++++++++++++++++Use++++++++++++++++++++++
 app.use("/",rutasHome);
-app.use("/carrito",rutasCarrito);
+// app.use("/carrito",rutasCarrito);
 app.use("/login",rutasLogin);
-app.use("/register",rutasRegister);
+// app.use("/register",rutasRegister);
 app.use("/productos",rutasProductos);
 app.use("/users",rutasUsuarios);
-
+app.use("/api",rutasApi);
 app.listen(process.env.PORT || 3000, ()=> {
     console.log("Servidor funcionando");
 })
