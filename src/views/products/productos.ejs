@@ -39,11 +39,12 @@
             <a href="/productos/detalle/<%= product.id %>"><article class="homearticulo-producto">
 
 
-                <div class="card" style="width: 18rem;">
-                    <img src="/images/<%= product.imagenes_producto[0].nombre_imagen %>" class="card-img-top" alt="...">
+                <div class="card" style="width: 18vw;">
+                    <img src="/images/<%= product.imagenes_producto[0].nombre_imagen %>" class="card-img-top img-thumbnail" alt="...">
                     <div class="card-body">
-                      <h5 class="card-title"><%= product.nombre %></h5>
-                      <p class="card-text"><%= product.descripcion %></p>
+                      <h5 class="card-title" style="color:white;font-weight:bold"><%= product.nombre %></h5>
+                      <p class="card-text" style="color:white ; font-size:15px"><%= product.descripcion %></p>
+                      <br>
                       <a href="#" class="btn btn-primary">Detalle</a>
                     </div>
                 </div>

@@ -717,8 +717,23 @@ section ul {
 
 
 
-
-
+.card {
+	display: block;
+	flex-wrap: wrap;
+	height: 60vh;
+	position:relative; 
+	z-index:9;
+	background-color: black;
+	
+}
+header {
+	position: relative;
+	z-index: 10;
+}
+.card img {
+	max-height: 35vh;
+	min-height: 30vh;
+}
 
 
 
