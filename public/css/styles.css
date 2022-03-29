@@ -445,22 +445,35 @@ cts:hover article{
 	font-weight: bold;
 	display: block; 
 	margin: auto;
+	
+}
+.descripcion{
+	font-size: 0.75rem;
 }
 
 .slider-producto li img{
 	height: auto;
-max-width: 100%;
+	max-width: 100%;
 	
 }
 .homesection-producto{
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-around;
+
 }
- .homearticulo-producto{
+.productos-lista{
+	width: 500px;
+	height: 600px;
+}
+.homearticulo-producto a{
+	display: flex;
+	flex-wrap: nowrap;
+	align-items: center;
 	border-radius: 7px;
 	margin: 30px;
-	padding: 0 0 10px 0;
+	padding-bottom: 10px;
+
 } 
 .homearticulo-producto:hover{
 	box-shadow: 1px 1px 10px rgb(100, 100, 100);

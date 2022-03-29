@@ -8,7 +8,7 @@
     <br>
     <main>
         <div class="lista-general">
-            <div class="barra-filtros" style="color: azure;">
+            <!-- <div class="barra-filtros" style="color: azure;">
                 <ul>
                     <li>
                         <span>Placas de video</span>
@@ -29,38 +29,24 @@
                         <span>Fuentes</span>
                     </li>
                 </ul>
-            </div>
+            </div> -->
             <% if(user != undefined ){if(user.rol===2){%>
             <a href="/productos/creacion"><button>Crear Producto(Admin) </button></a>
             <% }} %>
-        <section class="homesection-producto">
-            
+        <section class="homesection-producto">  
             <% for(let product of productos){ %>
-            <a href="/productos/detalle/<%= product.id %>"><article class="homearticulo-producto">
-
-
-                <div class="card" style="width: 18rem;">
-                    <img src="/images/<%= product.imagenes_producto[0].nombre_imagen %>" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title"><%= product.nombre %></h5>
-                      <p class="card-text"><%= product.descripcion %></p>
-                      <a href="#" class="btn btn-primary">Detalle</a>
-                    </div>
+            <a href="/productos/detalle/<%= product.id %>">
+                <div class="homearticulo-producto">
+                <div>
+                    <img class="home-producto" src="/images/<%= product.imagenes_producto[0].nombre_imagen %>" alt="Producto">
                 </div>
-
-
-                <!-- <img class="home-producto" src="/images/<%= product.imagenes_producto[0].nombre_imagen %>" alt="Producto">
                 <div class="home-descripcion">
                     <p class="nombre"><%= product.nombre %></p>
                     <p class="descripcion"><%= product.descripcion %></p>
-                    <p class="precio"><%= product.imagen %></p>
-                    <p class="envio">Envio gratis</p>
-                </div> -->
-
-
-
-                
-            </article></a>
+                    <p class="img"><%= product.imagen %></p>
+                </div> 
+                </div>
+            </a>
             <% } %>
         </section>
     </div>

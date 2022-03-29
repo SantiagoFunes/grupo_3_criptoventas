@@ -56,7 +56,7 @@ const apiController = {
                 totalProducts: cantProducts,
             };
         });
-
+        res.header("Access-Control-Allow-Origin", "*");
         const productosEdit = productos.map((producto)=>{
             return {
                 id: producto.id,
