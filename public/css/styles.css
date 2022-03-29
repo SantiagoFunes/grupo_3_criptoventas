@@ -732,9 +732,13 @@ header {
 }
 .card img {
 	max-height: 35vh;
-	min-height: 30vh;
+	min-height: 35vh;
 }
-
+.card p {
+	color:white;
+	text-decoration-line: none;
+	font-size:15px
+}
 
 
 
