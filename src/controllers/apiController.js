@@ -86,6 +86,7 @@ const apiController = {
         clase_id:product.clase_id ,
         imagenes_producto:"http://localhost:3000/images/"+product.imagenes_producto[0].nombre_imagen
         }
+        res.header("Access-Control-Allow-Origin", "*");
         return res.status(200).json({
              product:productEdited,
              status:200

@@ -35,9 +35,9 @@
             <% }} %>
         <section class="homesection-producto">  
             <% for(let product of productos){ %>
-            <a href="/productos/detalle/<%= product.id %>">
+            <a  class="linkProductos" href="/productos/detalle/<%= product.id %>">
                 <div class="homearticulo-producto">
-                <div>
+                <div class="contenedorImagen">
                     <img class="home-producto" src="/images/<%= product.imagenes_producto[0].nombre_imagen %>" alt="Producto">
                 </div>
                 <div class="home-descripcion">

@@ -39,6 +39,4 @@ router.put("/:id",upload.single("image"),isAdminMiddleware, productsControllers.
 router.get("/detalle/:id", productsControllers.detalleProducto);
 router.delete("/delete/:id", productsControllers.eliminarProducto);
 
-
 module.exports=router;
-

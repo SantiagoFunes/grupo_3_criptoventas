@@ -484,6 +484,10 @@ cts:hover article{
 	object-fit: cover;
 }
 .home-descripcion{
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: center;
 	text-align: center;
 	color: white;
 	font-size: 13px;
@@ -728,7 +732,14 @@ section ul {
 	color : red;
 }
 
-
+.linkProductos{
+	text-decoration: none;
+	width: 25%;
+}
+.contenedorImagen{
+	display: flex;
+	justify-content: center;
+}
 
 .card {
 	display: block;
