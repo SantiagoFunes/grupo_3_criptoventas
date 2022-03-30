@@ -7,6 +7,7 @@ const cookieParser = require("cookie-parser");
 const cookie = require ("../middlewares/cookie");
 const { json } = require("express");
 const session = require("express-session");
+const cors = require ("cors");
 
 
 app.use(cookieParser());
@@ -18,6 +19,7 @@ app.use(session({
 app.use(cookie);
 app.use(express.urlencoded({extended: true}));
 app.use(methodOverride('_method'));
+app.use(cors('*'))
 app.set('views', path.join(__dirname, '/views'));
 app.set('view engine', 'ejs');
 

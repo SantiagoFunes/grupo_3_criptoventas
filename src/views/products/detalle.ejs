@@ -18,7 +18,7 @@
             <span class="precio-producto">U$D <%= productos.precio %></span>
             <span class="precio-producto"><%= productos.modelo %></span>
             <span class="descripcion-producto"><%= productos.descripcion %></span>
-            </div>
+          </div>
       </section>
       <% if(user != undefined ){if(user.rol===2){%>
       <a href="/productos/<%= productos.id %>/edicion"><button> Editar producto(Admin)</button></a>

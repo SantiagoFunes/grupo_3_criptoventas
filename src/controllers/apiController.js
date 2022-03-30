@@ -13,6 +13,7 @@ const apiController = {
                 id:usuario.id,
                 nombre:usuario.nombre,
                 email:usuario.email,
+                apellido:usuario.apellido,
                 detalle: 'http://localhost:3000/users/profile'
             }
         })
@@ -38,6 +39,25 @@ const apiController = {
                 user:usuarioEdited,
                 status:200
             });
+
+    },
+    usersLast:async(req,res)=>{
+
+
+        const usuarios = await db.Usuario.findAll()
+        const usuariosEdited = usuarios[usuarios.length-1]
+        const UltimoUsuario = {
+            id: usuariosEdited.id,
+            nombre:usuariosEdited.nombre,
+            apellido:usuariosEdited.apellido,
+            email:usuariosEdited.email,
+            img:usuariosEdited.img
+        }
+
+         return res.status(200).json({
+             UltimoUsuario:UltimoUsuario,
+             status:200
+         });
 
     },
     productsDisplay:async(req,res)=>{
@@ -92,6 +112,19 @@ const apiController = {
              status:200
          });
 
+    },
+    productsLast:async(req,res)=>{
+        const Producto = await db.Producto.findAll({
+            include:["clase"],
+            include:["imagenes_producto"]
+        })
+        res.header("Access-Control-Allow-Origin", "*");
+        return res.status(200).json({
+            product:Producto[Producto.length-1],
+            status:200
+        });
+        
     }
+    
 }
 module.exports = apiController;
