@@ -74,6 +74,7 @@ const productsControllers = {
         }
     },
     editarProducto:async(req,res)=>{ 
+        
         await Producto.update({
                 nombre:req.body.name,
                 descripcion:req.body.description,
@@ -86,7 +87,19 @@ const productsControllers = {
             where:{ id: req.params.id}
         
         });
-
+        if(req.files.length > 0){
+            for (let image of req.files) {
+                const validationExtensionImage = ['jpeg','jpg','png','gif'].includes(image.filename.toLowerCase().split('.')[1])
+                if(validationExtensionImage){
+                    await Imagenes_producto.update({
+                     nombre_imagen: image.originalname
+                        
+                 },{
+                    where:{producto_id: req.params.id} 
+                 });
+                }
+            };
+        }
         res.redirect("/productos/detalle/" + req.params.id)
     },
     eliminarProducto:async(req, res) =>{

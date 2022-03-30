@@ -35,7 +35,7 @@ router.post("/",isAdminMiddleware,upload.array("image", 5),
 
   ,productsControllers.nuevoProducto);
 router.get("/:id/edicion",isAdminMiddleware, productsControllers.vistaEdicion);
-router.put("/:id",upload.single("image"),isAdminMiddleware, productsControllers.editarProducto);
+router.put("/:id",upload.array("image", 5),isAdminMiddleware, productsControllers.editarProducto);
 router.get("/detalle/:id", productsControllers.detalleProducto);
 router.delete("/delete/:id", productsControllers.eliminarProducto);
 

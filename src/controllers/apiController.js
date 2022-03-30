@@ -42,8 +42,6 @@ const apiController = {
 
     },
     usersLast:async(req,res)=>{
-
-
         const usuarios = await db.Usuario.findAll()
         const usuariosEdited = usuarios[usuarios.length-1]
         const UltimoUsuario = {
