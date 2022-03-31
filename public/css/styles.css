@@ -10,6 +10,9 @@ body{
 	background-color: black;
 	color: white;
 }
+body main {
+	text-align: center;
+}
 .menu{
 	background-color: black;
 	height: 75px;
