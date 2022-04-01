@@ -19,20 +19,23 @@
                 <ul class="lista-crear">
                     <div class="form-control" >
                     <input class="nombre" value="<%= productos.nombre %>" type="text" name="name" placeholder="Nombre del producto"> 
+                    <br>
                     <i class="fas fa-check-circle"></i>
                     <i class="fas fa-exclamation-circle"></i>
                     <small>Error en el nombre</small>
                 </div> 
                     <br>
                     <div class="form-control" >
-                    <input value="<%= productos.descripcion %>" type="text" class="descripcion" name="description" placeholder="Descripcion">    
+                    <input value="<%= productos.descripcion %>" type="text" class="descripcion" name="description" placeholder="Descripcion">
+                    <br>    
                     <i class="fas fa-check-circle"></i>
                     <i class="fas fa-exclamation-circle"></i>
                     <small>Error en el nombre</small>
                 </div>    
                     <br>
                     <div class="form-control" >
-                    <input value="<%= productos.marca %>" type="text" name="brand" placeholder="Marca">  
+                    <input value="<%= productos.marca %>" type="text" name="brand" placeholder="Marca"> 
+                    <br> 
                     <i class="fas fa-check-circle"></i>
                     <i class="fas fa-exclamation-circle"></i>
                     <small>Error en el nombre</small>
@@ -40,6 +43,7 @@
                     <br> 
                     <div class="form-control" >
                     <input value="<%= productos.modelo %>" type="text" name="modelo" placeholder="Modelo">
+                    <br>
                     <i class="fas fa-check-circle"></i>
                     <i class="fas fa-exclamation-circle"></i>
                     <small>Error en el nombre</small>
@@ -51,14 +55,16 @@
                         <% for (let i = 0 ; i < clases.length; i++) {%>
                         <option value="<%= clases[i].id %>"<%= productos.clase_id == clases[i].id ? "selected" : ""%>><%= clases[i].nombre %> </option>
                         <% } %>
-                    </select> 
+                    </select>
+                    <br> 
                     <i class="fas fa-check-circle"></i>
                     <i class="fas fa-exclamation-circle"></i>
                     <small>Error en el nombre</small>
                 </div>
                     <br> 
                     <div class="form-control" >
-                    <input value="<%= productos.precio %>" type="text" name="price" placeholder="Precio">   
+                    <input value="<%= productos.precio %>" type="text" name="price" placeholder="Precio">  
+                    <br> 
                     <i class="fas fa-check-circle"></i>
                     <i class="fas fa-exclamation-circle"></i>
                     <small>Error en el nombre</small>
@@ -67,6 +73,7 @@
                     <div class="form-control" >
                     <img class="imagen-producto" src="/images/<%= productos.imagenes_producto[0].nombre_imagen %>" alt="Imagen del producto actual">
                     <li ><input type="file"  class="image" name="image">
+                        <br>
                     <i class="fas fa-check-circle"></i>
                     <i class="fas fa-exclamation-circle"></i>
                     <small>Error en el nombre</small>

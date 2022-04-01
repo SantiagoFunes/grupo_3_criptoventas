@@ -5,7 +5,7 @@
         <%- include('../partials/head.ejs')%>
         <%- include('../partials/header.ejs')%>
         <div class="contenedor-carrito">
-            <div class="imagen-carrito">
+            <!-- <div class="imagen-carrito">
                 <img width ="40%" src="./images/Rig.jpg" alt="Rig" class="imagen1" >
                 <div class="caja-boton-cantidad">    
                     
@@ -18,13 +18,14 @@
                     </div>
                     
                     <a class="btn-plus" href="#"><i class="fas fa-plus-square"></i></a>
-                </div>
+                </div> -->
                 
                 <img width ="40%" src="./images/fuente.png" alt="fuente" class="imagen2" >
+                <br>
                 <div class="caja-boton-cantidad">    
                     
                     <a class="btn-minnus" href="#"><i class="fas fa-minus-square"></i></a>
-
+                    
                     <div class= form-cantidad>
                         <form action="/" method="POST">
                         <input class="input-cantidad" type="number" min="0" max="10" name="qty" placeholder="Cantidad">
@@ -52,20 +53,14 @@
 
                         <div class="boton-carrito">
                         
-                            <button class="estilo-boton-seguir"><a href="/" type="reset" > Seguir comprando</button>
+                            <button class="estilo-boton-seguir"><a href="/productos" type="reset" > Seguir comprando</button>
 
-                            <button class="estilo-boton-comprar"><a href= "/pagar" type="submit"> Confirmar compra </button>
+                            <button onclick="confirm('Gracias por comprar');" class="estilo-boton-comprar"><a href= "/productos" type="submit"> Confirmar compra </button>
                         
                         </div>
                     
 <br>            
-                    <div class= form-cupon>
-                        <form action="/" method="POST">
-                        <input type="text" name="cupon" placeholder="Código promocional">
-                        </form>          
 
-                    
-                    </div>
                 </div>
         </div>
 

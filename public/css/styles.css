@@ -22,7 +22,9 @@ body{
 	position: fixed;
 	top: 0;
 }
-
+.form{
+	display: flex;
+}
 .log{
 	padding:0px 10px;
 	font-weight: bold;

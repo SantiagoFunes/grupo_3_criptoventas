@@ -120,9 +120,7 @@ const apiController = {
         return res.status(200).json({
             product:Producto[Producto.length-1],
             status:200
-        });
-        
+        });  
     }
-    
 }
 module.exports = apiController;
